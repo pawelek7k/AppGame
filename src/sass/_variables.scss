@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Trade+Winds&display=swap');
+
+$background-color: #0c0c0c;
+$primary-color: #c7c7c7;
+$first-font: 'Trade Winds', system-ui;
+$second-font: 'Montserrat', sans-serif;
+$primary-pink: rgb(209, 8, 72);
+$transition: 250ms ease-in-out;
+
+$primary-font-size: clamp(10px, 3vw, 17px);
+$primary-font-weight: 600;

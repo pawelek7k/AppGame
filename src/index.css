@@ -1,0 +1,122 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Trade+Winds&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Trade+Winds&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Trade+Winds&display=swap");
+.header {
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid rgb(209, 8, 72);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-header {
+  font-family: "Trade Winds", system-ui;
+  transition: 250ms ease-in-out;
+  font-size: clamp(15px, 4vw, 25px);
+}
+.logo-header:hover {
+  color: rgb(209, 8, 72);
+}
+
+.logo-header span {
+  color: rgb(209, 8, 72);
+}
+
+.hamburger {
+  cursor: pointer;
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  height: 3em;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (max-width: 580px) {
+  .hamburger svg {
+    height: 2rem;
+  }
+}
+
+.line {
+  fill: none;
+  stroke: #c7c7c7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+.navbar-list {
+  display: flex;
+  gap: 2rem;
+  font-size: clamp(10px, 3vw, 17px);
+  font-weight: 600;
+}
+
+.navbar-header {
+  display: none;
+}
+
+.navbar-list {
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.navbar-list li {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.navbar-list.show li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+body {
+  background-color: #0c0c0c;
+  color: #c7c7c7;
+  font-family: "Montserrat", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #c7c7c7;
+}
+
+li {
+  list-style: none;
+}
+
+/*# sourceMappingURL=index.css.map */
