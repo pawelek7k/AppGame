@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Trade+Winds&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Trade+Winds&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Trade+Winds&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Trade+Winds&display=swap");
 .header {
   padding: 1.5rem 3rem;
   border-bottom: 0.5px solid rgb(0, 255, 213);
@@ -292,6 +293,67 @@ a {
 
 li {
   list-style: none;
+}
+
+.container {
+  max-width: 1800px;
+}
+
+section {
+  padding: 5rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.hero-heading {
+  font-family: "Trade Winds", system-ui;
+  letter-spacing: 2px;
+  text-align: center;
+  font-weight: 600;
+  font-size: clamp(20px, 3vw, 50px);
+  color: transparent;
+  -webkit-text-stroke: 1px #c7c7c7;
+}
+
+.first-content-hero {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-container {
+  margin-top: 5rem;
+}
+
+.hero-section {
+  position: relative;
+}
+
+.hero-btn::after {
+  content: "Start";
+}
+
+.custom-shape-divider-top-1710863607 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1710863607 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 266px;
+}
+
+.custom-shape-divider-top-1710863607 .shape-fill {
+  fill: #243f3a;
 }
 
 /*# sourceMappingURL=index.css.map */

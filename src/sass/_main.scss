@@ -1,5 +1,5 @@
 @import './variables';
-
+@import './mixin';
 body {
   background-color: $background-color;
   color: $primary-color;
@@ -19,4 +19,13 @@ a {
 
 li {
   list-style: none;
+}
+
+.container {
+  max-width: 1800px;
+}
+
+section {
+  padding: 5rem;
+  @include center();
 }

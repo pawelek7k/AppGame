@@ -1,0 +1,58 @@
+@import './variables';
+@import './mixin';
+
+.hero-heading {
+  font-family: $first-font;
+  letter-spacing: $letter-spacing;
+  text-align: center;
+  font-weight: $primary-font-weight;
+  font-size: $heading-font-size;
+  color: transparent;
+  -webkit-text-stroke: 1px $primary-color;
+}
+
+.first-content-hero {
+  @include center();
+  flex-direction: column;
+  gap: $spacing;
+}
+
+.hero-container {
+  margin-top: 5rem;
+}
+
+.hero-section {
+  position: relative;
+}
+
+.hero-btn::after {
+  content: 'Start';
+}
+
+.custom-shape-divider-top-1710863607 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1710863607 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 266px;
+}
+
+.custom-shape-divider-top-1710863607 .shape-fill {
+  fill: #243f3a;
+}
+
+// .second-content-hero {
+//   background-image: url('./images/back-hero.jpg');
+//   height: 100vh;
+//   background-position: center;
+//   background-size: contain;
+//   background-repeat: no-repeat;
+// }
