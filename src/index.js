@@ -1,22 +1,3 @@
-// // document.addEventListener('DOMContentLoaded', function () {
-// //   const hamburger = document.querySelector('.hamburger');
-// //   const menu = document.querySelector('.menu');
+'use script';
 
-// //   hamburger.addEventListener('click', function () {
-// //     this.classList.toggle('open');
-// //     menu.classList.toggle('show');
-// //   });
-// // });
-
-const hamburgerBtn = document.querySelector('.hamburger-input');
-hamburgerBtn.checked = false;
-const navbarList = document.querySelector('.navbar-list');
-const header = document.querySelector('.header');
-
-hamburgerBtn.addEventListener('click', e => {
-  navbarList.style.opacity = 1;
-
-  if (hamburgerBtn.checked == false) {
-    navbarList.style.opacity = 0;
-  }
-});
+import './js/navbar';
