@@ -322,14 +322,23 @@ section {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 50%;
 }
 
 .hero-container {
-  margin-top: 5rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 .hero-section {
   position: relative;
+  background: radial-gradient(circle, rgba(20, 20, 20, 0.071) 0%, #000000 100%), url("./images/background-hero.png");
+  height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #000000;
+  background-position: center;
 }
 
 .hero-btn::after {
