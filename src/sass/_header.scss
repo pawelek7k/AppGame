@@ -62,10 +62,6 @@
   stroke-dashoffset: -32.42;
 }
 
-.navbar-header {
-  display: none;
-}
-
 .display-header {
   display: flex;
 }
@@ -76,29 +72,20 @@
   }
 }
 
-.active {
-  display: block;
-}
-
-.navbar-active {
-  border-bottom: 1px solid $primary-cyan;
+.navbar-list {
+  font-family: $first-font;
   @include center();
-  &:checked {
-    .navbar-header {
-      display: block;
-    }
-  }
+  gap: $spacing;
+  opacity: 0;
+  transition: $transition;
 }
 
-.navbar-header.active {
-  width: 20%;
-  height: 100vh;
-  background-color: rgb(69, 52, 52);
-  & {
-    .header {
-      width: 80%;
-    }
-  }
+.navbar-list li a {
+  transition: $transition;
+}
+
+.navbar-list li a:hover {
+  color: $primary-cyan;
 }
 
 .header-btns {

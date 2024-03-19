@@ -4,7 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Trade+Winds&display=swap");
 .header {
   padding: 1.5rem 3rem;
-  border-bottom: 0.5px solid #1df2f0;
+  border-bottom: 0.5px solid rgb(0, 255, 213);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,11 +16,11 @@
   font-size: clamp(15px, 4vw, 25px);
 }
 .logo-header:hover {
-  color: #1df2f0;
+  color: rgb(0, 255, 213);
 }
 
 .logo-header span {
-  color: #1df2f0;
+  color: rgb(0, 255, 213);
 }
 
 .hamburger {
@@ -63,10 +63,6 @@
   stroke-dashoffset: -32.42;
 }
 
-.navbar-header {
-  display: none;
-}
-
 .display-header {
   display: flex;
 }
@@ -75,27 +71,22 @@
   display: block;
 }
 
-.active {
-  display: block;
-}
-
-.navbar-active {
-  border-bottom: 1px solid #1df2f0;
+.navbar-list {
+  font-family: "Trade Winds", system-ui;
   align-items: center;
   justify-content: center;
   display: flex;
-}
-.navbar-active:checked .navbar-header {
-  display: block;
+  gap: 2rem;
+  opacity: 0;
+  transition: 250ms ease-in-out;
 }
 
-.navbar-header.active {
-  width: 20%;
-  height: 100vh;
-  background-color: rgb(69, 52, 52);
+.navbar-list li a {
+  transition: 250ms ease-in-out;
 }
-.navbar-header.active .header {
-  width: 80%;
+
+.navbar-list li a:hover {
+  color: rgb(0, 255, 213);
 }
 
 .header-btns {
