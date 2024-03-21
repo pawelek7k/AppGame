@@ -36,27 +36,39 @@ async function renderGames() {
 
   list.innerHTML = '';
 
-  popularGames.results.forEach(game => {
+  popularGames.results.forEach(async game => {
     const { id, name, background_image, genres: gameGenres, tags } = game;
 
-    const genreNames = gameGenres.map(genre => genre.name);
-    const tagNames = tags.map(tag => tag.name);
+    const img = new Image();
+    img.src = background_image;
 
-    const listItem = `
-            <li class="cards-game-home-list" data-id="${id}">
-                <a href="" class="cards-game-home-link" id="${id}">
-                    <div class="cards-game-home-photo" data-id="${id}" data-title="${name}" data-original_title="${name}"></div>
-                    <img class="cards-game-home-img" width="300" src="${background_image}" alt="Poster ${name}" />
-                    <div class="cards-game-home-info">
-                        <p class="cards-title"><b>${name.toUpperCase()}</b></p>
-                        <p class="cards-genres">${genreNames.join(', ')}</p>
-                        <p class="cards-tags">${tagNames.join(', ')}</p>
-                    </div>
-                </a>
-            </li>
-        `;
+    img.onload = function () {
+      if (this.naturalWidth >= this.naturalHeight) {
+        const genreNames = gameGenres.map(genre => genre.name);
+        const tagNames = tags.map(tag => tag.name);
 
-    list.insertAdjacentHTML('beforeend', listItem);
+        const listItem = `
+<li class="card-container" data-id="${id}">
+  <div class="card">
+    <a href="" class="cards-home-movie-link" id="${id}">
+      <div class="cards-home-movie-photo" data-id="${id}" data-title="${name}" data-original_title="${name}"></div>
+      <div class="img-content">
+        <img class="cards-home-movie-image" width="350" src="${background_image}" alt="Poster ${name}" />
+      </div>
+      <div class="content">
+        <p class="cards-home-movie-title"><b>${name.toUpperCase()}</b></p>
+        <p class="cards-home-movie-title"><b>${name.toUpperCase()}</b></p>
+        <p class="cards-home-movie-genres">${genreNames}</p>
+        <p class="cards-home-movie-tags">${tagNames.join(', ')}</p>
+      </div>
+    </a>
+  </div>
+</li>
+`;
+
+        list.insertAdjacentHTML('beforeend', listItem);
+      }
+    };
   });
 }
 
