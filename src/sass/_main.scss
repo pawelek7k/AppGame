@@ -4,6 +4,7 @@ body {
   background-color: $background-color;
   color: $primary-color;
   font-family: $second-font;
+  height: 100vh;
 }
 
 * {
@@ -26,6 +27,5 @@ li {
 }
 
 section {
-  padding: 5rem;
   @include center();
 }

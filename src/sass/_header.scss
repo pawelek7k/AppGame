@@ -1,187 +1,132 @@
-@import '~node_modules/modern-normalize/modern-normalize.css';
-@import './variables';
 @import './mixin';
+@import './variables';
 
-.header {
-  padding: 1.5rem 3rem;
-  border-bottom: 0.5px solid $primary-cyan;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.wave-group {
+  position: relative;
 }
 
 .logo-header {
   font-family: $first-font;
-  transition: $transition;
-  font-size: clamp(15px, 4vw, 25px);
-  &:hover {
-    color: $primary-cyan;
-  }
+  letter-spacing: $letter-spacing;
+  font-size: $primary-font-size;
 }
 
 .logo-header span {
   color: $primary-cyan;
 }
 
-.hamburger {
-  cursor: pointer;
+.wave-group .input {
+  font-size: $input-font-size;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 200px;
+  color: $primary-color;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
 }
 
-.hamburger input {
-  display: none;
+.wave-group .input:focus {
+  outline: none;
 }
 
-.hamburger svg {
-  height: 3em;
-  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
-  @media screen and (max-width: 580px) {
-    height: 2rem;
-  }
-}
-
-.line {
-  fill: none;
-  stroke: $primary-color;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 3;
-  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.line-top-bottom {
-  stroke-dasharray: 12 63;
-}
-
-.hamburger input:checked + svg {
-  transform: rotate(-45deg);
-}
-
-.hamburger input:checked + svg .line-top-bottom {
-  stroke-dasharray: 20 300;
-  stroke-dashoffset: -32.42;
-  stroke: $primary-cyan;
-}
-
-.display-header {
+.wave-group .label {
+  color: #999;
+  font-size: $input-font-size;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
   display: flex;
 }
 
-.hamburger:checked {
-  .navbar-header {
-    display: block;
-  }
+.wave-group .label-char {
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * 0.05s);
 }
 
-.navbar-list {
-  font-family: $first-font;
-  @include center();
-  gap: $spacing;
-  opacity: 0;
-  transition: $transition;
-  // @media (max-width: 950px) {
-  //   display: none;
-  // }
-  letter-spacing: $letter-spacing;
-}
-
-.navbar-menu.active .navbar-list li {
-  @media (max-width: 700px) {
-    border-bottom: 1px solid $primary-cyan;
-  }
-}
-
-.container-menu {
-  display: flex;
-  @include center();
-  justify-content: space-around;
-  gap: 5rem;
-  @media (max-width: 700px) {
-    display: none;
-  }
-  @media (max-width: 950px) {
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
-
-.navbar-menu.active .container-menu {
-  @media (max-width: 700px) {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 70%;
-    gap: 10%;
-    background-color: $background-color;
-    border-radius: $spacing;
-    @include center();
-    border: 1px solid $primary-cyan;
-  }
-}
-
-.navbar-menu.active {
-  @media (max-width: 700px) {
-    display: block;
-    position: absolute;
-    background: rgba(2, 29, 29, 0.423);
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-  }
-}
-
-.navbar-list li a {
-  transition: $transition;
-}
-
-.navbar-list li a:hover {
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:valid ~ label .label-char {
+  transform: translateY(-20px);
+  font-size: 14px;
   color: $primary-cyan;
 }
 
-.header-btns {
+.wave-group .bar {
+  position: relative;
+  display: block;
+  width: 200px;
+}
+
+.wave-group .bar:before,
+.wave-group .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: $primary-cyan;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.wave-group .bar:before {
+  left: 50%;
+}
+
+.wave-group .bar:after {
+  right: 50%;
+}
+
+.wave-group .input:focus ~ .bar:before,
+.wave-group .input:focus ~ .bar:after {
+  width: 50%;
+}
+
+.header {
+  display: flex;
+  @include center();
+  justify-content: space-around;
+  padding: $spacing;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  background-color: $background-elements;
+}
+
+.buttons-register {
   display: flex;
   gap: $spacing;
-  @media (max-width: 900px) {
-    gap: 1rem;
-  }
 }
 
-.navbar-menu.active .register-btn {
-  display: block;
+.user-icon {
+  width: 2rem;
+  border-radius: 50%;
+  background-color: $primary-cyan;
+  height: 2rem;
 }
 
-.navbar-menu.active .header-btns {
-  @media (max-width: 700px) {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-.register-btn {
-  cursor: pointer;
-  font-size: $primary-font-size;
-  font-family: $first-font;
-  @media (max-width: 700px) {
-    display: none;
-  }
-}
-
-.register-btn,
-::after {
+.buttons-register button,
+button::after {
   padding: 10px 50px;
-  font-size: 20px;
+  font-size: $primary-font-size;
   border: none;
   border-radius: 5px;
+  font-family: $first-font;
+  letter-spacing: $letter-spacing;
   color: $primary-color;
   background-color: transparent;
   position: relative;
+  cursor: pointer;
 }
 
-.register-btn::after {
+.buttons-register button::after {
   --move1: inset(50% 50% 50% 50%);
   --move2: inset(31% 0 40% 0);
   --move3: inset(39% 0 15% 0);
@@ -198,7 +143,7 @@
   display: block;
 }
 
-.register-btn:hover::after {
+.buttons-register button:hover::after {
   animation: glitch_4011 1s;
   text-shadow: 10 10px 10px black;
   animation-timing-function: steps(2, end);
@@ -207,11 +152,11 @@
   border: 3px solid rgb(0, 255, 213);
 }
 
-.register-btn:hover {
+.buttons-register button:hover {
   text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #e94be8;
 }
 
-.register-btn:hover {
+.buttons-register button:hover {
   background-color: transparent;
   border: 1px solid rgb(0, 255, 213);
   box-shadow: 0px 10px 10px -10px rgb(0, 255, 213);

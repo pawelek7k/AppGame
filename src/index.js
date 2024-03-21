@@ -1,3 +1,3 @@
 'use script';
 
-import './js/navbar';
+import './js/render-cards';

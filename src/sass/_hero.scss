@@ -1,71 +1,60 @@
-@import './variables';
-@import './mixin';
-
-.hero-heading {
-  font-family: $first-font;
-  letter-spacing: $letter-spacing;
-  text-align: center;
-  font-weight: $primary-font-weight;
-  font-size: $heading-font-size;
-  color: transparent;
-  -webkit-text-stroke: 1px $primary-color;
-}
-
-.first-content-hero {
-  @include center();
-  flex-direction: column;
-  gap: $spacing;
-  width: 50%;
-}
-
-.hero-container {
-  @include center();
-}
-
-.hero-section {
-  position: relative;
-  background: radial-gradient(circle, rgba(20, 20, 20, 0.071) 0%, #000000 100%),
-    url('./images/background-hero.png');
-  height: 100vh;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: #000000;
-  background-position: center;
-}
-
-.hero-btn::after {
-  content: 'Start';
-}
-
-.custom-shape-divider-top-1710863607 {
+.custom-shape-divider-top-1710960493 {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
+  z-index: 1;
   line-height: 0;
 }
 
-.custom-shape-divider-top-1710863607 svg {
+.custom-shape-divider-top-1710960493 svg {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: 266px;
+  height: 150px;
 }
 
-.custom-shape-divider-top-1710863607 .shape-fill {
-  fill: #243f3a;
+.custom-shape-divider-top-1710960493 .shape-fill {
+  fill: $death-green;
 }
 
-// .second-content-hero {
-//   background-size: cover;
-//   background: radial-gradient(
-//       circle,
-//       rgba(0, 0, 0, 0.071) 0%,
-//       $background-color 100%
-//     ),
-//     url('./images/background-hero.png');
-//   background-position: center;
-//   width: 100%;
+.side-nav-bar {
+  position: fixed;
+  top: 10%;
+  left: 0;
+  height: 90%;
+  background-color: $background-color;
+  width: 15%;
+}
+
+.container-hero {
+  overflow: auto;
+  position: relative;
+}
+
+.main-gallery {
+  margin-left: 20%;
+  margin-top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// .main {
 //   height: 100vh;
+//   width: 100vh;
 // }
+
+::-webkit-scrollbar {
+  width: 12px; // Szerokość paska przewijania
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $death-green; // Kolor kciuka paska przewijania
+  border-radius: $spacing;
+  cursor: pointer;
+}
+
+.cards-game-home-list {
+  width: 350px;
+}

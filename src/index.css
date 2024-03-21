@@ -1,198 +1,134 @@
-@import '~node_modules/modern-normalize/modern-normalize.css';
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Trade+Winds&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Trade+Winds&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Trade+Winds&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Trade+Winds&display=swap");
-.header {
-  padding: 1.5rem 3rem;
-  border-bottom: 0.5px solid rgb(0, 255, 213);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.wave-group {
+  position: relative;
 }
 
 .logo-header {
   font-family: "Trade Winds", system-ui;
-  transition: 250ms ease-in-out;
-  font-size: clamp(15px, 4vw, 25px);
-}
-.logo-header:hover {
-  color: rgb(0, 255, 213);
+  letter-spacing: 2px;
+  font-size: clamp(10px, 3vw, 17px);
 }
 
 .logo-header span {
   color: rgb(0, 255, 213);
 }
 
-.hamburger {
-  cursor: pointer;
-}
-
-.hamburger input {
-  display: none;
-}
-
-.hamburger svg {
-  height: 3em;
-  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-@media screen and (max-width: 580px) {
-  .hamburger svg {
-    height: 2rem;
-  }
-}
-
-.line {
-  fill: none;
-  stroke: #c7c7c7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 3;
-  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.line-top-bottom {
-  stroke-dasharray: 12 63;
-}
-
-.hamburger input:checked + svg {
-  transform: rotate(-45deg);
-}
-
-.hamburger input:checked + svg .line-top-bottom {
-  stroke-dasharray: 20 300;
-  stroke-dashoffset: -32.42;
-  stroke: rgb(0, 255, 213);
-}
-
-.display-header {
-  display: flex;
-}
-
-.hamburger:checked .navbar-header {
+.wave-group .input {
+  font-size: clamp(10px, 3vw, 15px);
+  padding: 10px 10px 10px 5px;
   display: block;
+  width: 200px;
+  color: #c7c7c7;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
 }
 
-.navbar-list {
-  font-family: "Trade Winds", system-ui;
-  align-items: center;
-  justify-content: center;
+.wave-group .input:focus {
+  outline: none;
+}
+
+.wave-group .label {
+  color: #999;
+  font-size: clamp(10px, 3vw, 15px);
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
   display: flex;
-  gap: 2rem;
-  opacity: 0;
-  transition: 250ms ease-in-out;
-  letter-spacing: 2px;
 }
 
-@media (max-width: 700px) {
-  .navbar-menu.active .navbar-list li {
-    border-bottom: 1px solid rgb(0, 255, 213);
-  }
+.wave-group .label-char {
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * 0.05s);
 }
 
-.container-menu {
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:valid ~ label .label-char {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: rgb(0, 255, 213);
+}
+
+.wave-group .bar {
+  position: relative;
+  display: block;
+  width: 200px;
+}
+
+.wave-group .bar:before,
+.wave-group .bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: rgb(0, 255, 213);
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.wave-group .bar:before {
+  left: 50%;
+}
+
+.wave-group .bar:after {
+  right: 50%;
+}
+
+.wave-group .input:focus ~ .bar:before,
+.wave-group .input:focus ~ .bar:after {
+  width: 50%;
+}
+
+.header {
   display: flex;
   align-items: center;
   justify-content: center;
   display: flex;
   justify-content: space-around;
-  gap: 5rem;
-}
-@media (max-width: 700px) {
-  .container-menu {
-    display: none;
-  }
-}
-@media (max-width: 950px) {
-  .container-menu {
-    flex-direction: column;
-    gap: 1rem;
-  }
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.231372549);
 }
 
-@media (max-width: 700px) {
-  .navbar-menu.active .container-menu {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 70%;
-    gap: 10%;
-    background-color: #0c0c0c;
-    border-radius: 2rem;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    border: 1px solid rgb(0, 255, 213);
-  }
-}
-
-@media (max-width: 700px) {
-  .navbar-menu.active {
-    display: block;
-    position: absolute;
-    background: rgba(2, 29, 29, 0.423);
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-  }
-}
-
-.navbar-list li a {
-  transition: 250ms ease-in-out;
-}
-
-.navbar-list li a:hover {
-  color: rgb(0, 255, 213);
-}
-
-.header-btns {
+.buttons-register {
   display: flex;
   gap: 2rem;
 }
-@media (max-width: 900px) {
-  .header-btns {
-    gap: 1rem;
-  }
+
+.user-icon {
+  width: 2rem;
+  border-radius: 50%;
+  background-color: rgb(0, 255, 213);
+  height: 2rem;
 }
 
-.navbar-menu.active .register-btn {
-  display: block;
-}
-
-@media (max-width: 700px) {
-  .navbar-menu.active .header-btns {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-.register-btn {
-  cursor: pointer;
-  font-size: clamp(10px, 3vw, 17px);
-  font-family: "Trade Winds", system-ui;
-}
-@media (max-width: 700px) {
-  .register-btn {
-    display: none;
-  }
-}
-
-.register-btn,
-::after {
+.buttons-register button,
+button::after {
   padding: 10px 50px;
-  font-size: 20px;
+  font-size: clamp(10px, 3vw, 17px);
   border: none;
   border-radius: 5px;
+  font-family: "Trade Winds", system-ui;
+  letter-spacing: 2px;
   color: #c7c7c7;
   background-color: transparent;
   position: relative;
+  cursor: pointer;
 }
 
-.register-btn::after {
+.buttons-register button::after {
   --move1: inset(50% 50% 50% 50%);
   --move2: inset(31% 0 40% 0);
   --move3: inset(39% 0 15% 0);
@@ -209,7 +145,7 @@
   display: block;
 }
 
-.register-btn:hover::after {
+.buttons-register button:hover::after {
   animation: glitch_4011 1s;
   text-shadow: 10 10px 10px black;
   animation-timing-function: steps(2, end);
@@ -218,11 +154,11 @@
   border: 3px solid rgb(0, 255, 213);
 }
 
-.register-btn:hover {
+.buttons-register button:hover {
   text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #e94be8;
 }
 
-.register-btn:hover {
+.buttons-register button:hover {
   background-color: transparent;
   border: 1px solid rgb(0, 255, 213);
   box-shadow: 0px 10px 10px -10px rgb(0, 255, 213);
@@ -278,6 +214,7 @@ body {
   background-color: #0c0c0c;
   color: #c7c7c7;
   font-family: "Montserrat", sans-serif;
+  height: 100vh;
 }
 
 * {
@@ -300,69 +237,65 @@ li {
 }
 
 section {
-  padding: 5rem;
   align-items: center;
   justify-content: center;
   display: flex;
 }
 
-.hero-heading {
-  font-family: "Trade Winds", system-ui;
-  letter-spacing: 2px;
-  text-align: center;
-  font-weight: 600;
-  font-size: clamp(20px, 3vw, 50px);
-  color: transparent;
-  -webkit-text-stroke: 1px #c7c7c7;
-}
-
-.first-content-hero {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  width: 50%;
-}
-
-.hero-container {
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
-
-.hero-section {
-  position: relative;
-  background: radial-gradient(circle, rgba(20, 20, 20, 0.071) 0%, #000000 100%), url("./images/background-hero.png");
-  height: 100vh;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: #000000;
-  background-position: center;
-}
-
-.hero-btn::after {
-  content: "Start";
-}
-
-.custom-shape-divider-top-1710863607 {
+.custom-shape-divider-top-1710960493 {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
+  z-index: 1;
   line-height: 0;
 }
 
-.custom-shape-divider-top-1710863607 svg {
+.custom-shape-divider-top-1710960493 svg {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: 266px;
+  height: 150px;
 }
 
-.custom-shape-divider-top-1710863607 .shape-fill {
-  fill: #243f3a;
+.custom-shape-divider-top-1710960493 .shape-fill {
+  fill: rgba(8, 71, 67, 0.4862745098);
+}
+
+.side-nav-bar {
+  position: fixed;
+  top: 10%;
+  left: 0;
+  height: 90%;
+  background-color: #0c0c0c;
+  width: 15%;
+}
+
+.container-hero {
+  overflow: auto;
+  position: relative;
+}
+
+.main-gallery {
+  margin-left: 20%;
+  margin-top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(8, 71, 67, 0.4862745098);
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.cards-game-home-list {
+  width: 350px;
 }
 
 /*# sourceMappingURL=index.css.map */
