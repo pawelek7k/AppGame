@@ -37,32 +37,48 @@ async function renderGames() {
   list.innerHTML = '';
 
   popularGames.results.forEach(async game => {
-    const { id, name, background_image, genres: gameGenres, tags } = game;
+    const {
+      id,
+      name,
+      background_image,
+      genres: gameGenres,
+      tags,
+      rating,
+      added,
+    } = game;
 
     const img = new Image();
     img.src = background_image;
+    console.log(game);
 
     img.onload = function () {
-      if (this.naturalWidth >= this.naturalHeight) {
+      if (
+        this.naturalWidth >= this.naturalHeight ||
+        Math.abs(this.naturalWidth - this.naturalHeight) < 50
+      ) {
         const genreNames = gameGenres.map(genre => genre.name);
         const tagNames = tags.map(tag => tag.name);
 
         const listItem = `
 <li class="card-container" data-id="${id}">
-  <div class="card">
-    <a href="" class="cards-home-movie-link" id="${id}">
-      <div class="cards-home-movie-photo" data-id="${id}" data-title="${name}" data-original_title="${name}"></div>
+      <div class="first-content-card" data-id="${id}" data-title="${name}" data-original_title="${name}">
       <div class="img-content">
-        <img class="cards-home-movie-image" width="350" src="${background_image}" alt="Poster ${name}" />
+        <img class="cards-home-movie-image" width="350" height="200" src="${background_image}" alt="Poster ${name}" />
+        <div>
+        <div class="stats-cards">
+        <p class="cards-home-movie-genres">${rating}</p>
+        <p class="cards-home-movie-genres">+ ${added}</p>
+        </div>
+        <span class="cards-home-movie-title">${name.toUpperCase()}</span>
+
+        </div>
       </div>
-      <div class="content">
-        <p class="cards-home-movie-title"><b>${name.toUpperCase()}</b></p>
-        <p class="cards-home-movie-title"><b>${name.toUpperCase()}</b></p>
-        <p class="cards-home-movie-genres">${genreNames}</p>
-        <p class="cards-home-movie-tags">${tagNames.join(', ')}</p>
-      </div>
-    </a>
   </div>
+      <div class="second-content-card">
+        <p class="cards-home-movie-genres">Genres: ${genreNames.join(', ')}</p>
+        <p class="cards-home-movie-tags">Tags: ${tagNames.join(', ')}</p>
+
+      </div>
 </li>
 `;
 
