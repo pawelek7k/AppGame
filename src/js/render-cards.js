@@ -75,8 +75,13 @@ async function renderGames() {
       </div>
   </div>
       <div class="second-content-card">
-        <p class="cards-home-game-genres">Genres: ${genreNames.join(', ')}</p>
-        <p class="cards-home-game-tags">Tags: ${tagNames.join(', ')}</p>
+        <div class="cards-home-game-genres">
+        <p>Genres:</p> </p>${genreNames.join(', ')}</p></div>
+        <div class="cards-home-game-genres">
+        <p>Genres:</p> </p>${genreNames.join(', ')}</p></div>
+        <div class="cards-home-game-genres">
+        <p>Genres:</p> </p>${genreNames.join(', ')}</p></div>
+
 
       </div>
 </li>
