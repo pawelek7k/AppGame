@@ -45,6 +45,8 @@ async function renderGames() {
       tags,
       rating,
       added,
+      released,
+      parent_platforms: gamePlatforms,
     } = game;
 
     const img = new Image();
@@ -58,6 +60,9 @@ async function renderGames() {
       ) {
         const genreNames = gameGenres.map(genre => genre.name);
         const tagNames = tags.map(tag => tag.name);
+
+        const platformNames = gamePlatforms.map(platform => platform.name);
+        const platformList = platformNames.join(', ');
 
         const listItem = `
 <li class="card-container" data-id="${id}">
@@ -76,11 +81,11 @@ async function renderGames() {
   </div>
       <div class="second-content-card">
         <div class="cards-home-game-genres">
-        <p>Genres:</p> </p>${genreNames.join(', ')}</p></div>
+        <p>Genres:</p> <p>${genreNames.join(', ')}</p></div>
         <div class="cards-home-game-genres">
-        <p>Genres:</p> </p>${genreNames.join(', ')}</p></div>
+        <p>Release date:</p> <p>${released}</p></div>
         <div class="cards-home-game-genres">
-        <p>Genres:</p> </p>${genreNames.join(', ')}</p></div>
+        <p>Platfotm:</p> <p>${platformList}</p></div>
 
 
       </div>
