@@ -63,20 +63,20 @@ async function renderGames() {
 <li class="card-container" data-id="${id}">
       <div class="first-content-card" data-id="${id}" data-title="${name}" data-original_title="${name}">
       <div class="img-content">
-        <img class="cards-home-movie-image" width="350" height="200" src="${background_image}" alt="Poster ${name}" />
+        <img class="cards-home-game-image" width="310" height="170" src="${background_image}" alt="Poster ${name}" />
         <div>
         <div class="stats-cards">
-        <p class="cards-home-movie-genres">${rating}</p>
-        <p class="cards-home-movie-genres">+ ${added}</p>
+        <p class="cards-home-game-rating">${rating}</p>
+        <p class="cards-home-game-added">+ ${added}</p>
         </div>
-        <span class="cards-home-movie-title">${name.toUpperCase()}</span>
+        <span class="cards-home-game-title">${name.toUpperCase()}</span>
 
         </div>
       </div>
   </div>
       <div class="second-content-card">
-        <p class="cards-home-movie-genres">Genres: ${genreNames.join(', ')}</p>
-        <p class="cards-home-movie-tags">Tags: ${tagNames.join(', ')}</p>
+        <p class="cards-home-game-genres">Genres: ${genreNames.join(', ')}</p>
+        <p class="cards-home-game-tags">Tags: ${tagNames.join(', ')}</p>
 
       </div>
 </li>
