@@ -484,6 +484,7 @@ section {
   font-family: "Trade Winds", system-ui;
   border: none;
   border-bottom: 1px solid rgb(0, 255, 213);
+  text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #e94be8;
 }
 
 .footer {
