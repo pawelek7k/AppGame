@@ -334,7 +334,7 @@ section {
 .container-hero {
   position: relative;
   margin-left: 15%;
-  margin-top: 10%;
+  margin-top: 8%;
 }
 
 .container-hero h1 {
@@ -344,6 +344,10 @@ section {
   font-weight: 600;
   font-size: clamp(20px, 3vw, 50px);
   text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #e94be8;
+}
+
+.container-hero h1 span {
+  color: rgb(0, 255, 213);
 }
 
 .main-gallery {

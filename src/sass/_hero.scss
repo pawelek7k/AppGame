@@ -37,7 +37,7 @@
 .container-hero {
   position: relative;
   margin-left: 15%;
-  margin-top: 10%;
+  margin-top: 8%;
 }
 
 .container-hero h1 {
@@ -47,6 +47,10 @@
   font-weight: $primary-font-weight;
   font-size: $heading-font-size;
   text-shadow: $main-text-shadow;
+}
+
+.container-hero h1 span {
+  color: $primary-cyan;
 }
 
 .main-gallery {
