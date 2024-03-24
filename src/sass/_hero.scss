@@ -28,16 +28,21 @@
   background-color: rgb(74, 73, 73);
   width: 15%;
   z-index: 0;
-  @media (max-width: 600px) {
-    width: 100vh;
+  @media (max-width: 815px) {
+    width: 100%;
     height: 5rem;
+    z-index: 100;
   }
 }
 
 .container-hero {
   position: relative;
   margin-left: 15%;
-  margin-top: 8%;
+  margin-top: 8rem;
+  @media (max-width: 815px) {
+    margin-left: 0%;
+    margin-top: 10rem;
+  }
 }
 
 .container-hero h1 {
@@ -47,6 +52,11 @@
   font-weight: $primary-font-weight;
   font-size: $heading-font-size;
   text-shadow: $main-text-shadow;
+  letter-spacing: $letter-spacing;
+  @media (max-width: 815px) {
+    text-align: center;
+    margin: 2rem 1rem;
+  }
 }
 
 .container-hero h1 span {
@@ -54,13 +64,11 @@
 }
 
 .main-gallery {
-  display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: center;
-  @media (max-width: 800px) {
-    flex-direction: column;
-  }
+  @include center();
+  align-items: self-start;
+  gap: $spacing;
+  padding-bottom: 5rem;
 }
 
 ::-webkit-scrollbar {
@@ -80,7 +88,12 @@
   position: relative;
   transition: 250ms;
   padding-bottom: 1.5rem;
-  margin: 0rem 0rem 2rem 2rem;
+  @media (max-width: 400px) {
+    width: 100%;
+  }
+  // @media (max-width: 682px) {
+  //   margin: 0 0 2rem 0;
+  // }
 }
 
 .stats-cards {

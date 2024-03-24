@@ -1,6 +1,6 @@
-const API_KEY = '4688c8e2a1b74736a6eaf922561496b4';
+export const API_KEY = '4688c8e2a1b74736a6eaf922561496b4';
 const baseUrl = 'https://api.rawg.io/api/';
-const list = document.querySelector('.main-gallery');
+export const list = document.querySelector('.main-gallery');
 
 async function fetchPopularGames(page) {
   const url = new URL('games', baseUrl);
