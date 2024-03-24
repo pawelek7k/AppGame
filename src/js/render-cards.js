@@ -30,7 +30,7 @@ async function fetchGenres() {
   }
 }
 
-async function renderGames() {
+export async function renderGames() {
   const popularGames = await fetchPopularGames(1);
   const genres = await fetchGenres();
 
@@ -51,13 +51,9 @@ async function renderGames() {
 
     const img = new Image();
     img.src = background_image;
-    console.log(game);
 
     img.onload = function () {
-      if (
-        this.naturalWidth >= this.naturalHeight ||
-        Math.abs(this.naturalWidth - this.naturalHeight) < 50
-      ) {
+      if (this.naturalWidth >= this.naturalHeight) {
         const genreNames = gameGenres.map(genre => genre.name);
         const tagNames = tags.map(tag => tag.name);
 

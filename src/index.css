@@ -322,7 +322,7 @@ section {
   background-color: #0c0c0c;
   background-color: rgb(74, 73, 73);
   width: 15%;
-  z-index: 999;
+  z-index: 0;
 }
 @media (max-width: 600px) {
   .side-nav-bar {
@@ -333,16 +333,22 @@ section {
 
 .container-hero {
   position: relative;
-  align-items: center;
-  justify-content: center;
-  display: flex;
+  margin-left: 15%;
+  margin-top: 10%;
+}
+
+.container-hero h1 {
+  text-align: start;
+  margin: 0rem 0rem 3rem 5rem;
+  font-family: "Trade Winds", system-ui;
+  font-weight: 600;
+  font-size: clamp(20px, 3vw, 50px);
+  text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #e94be8;
 }
 
 .main-gallery {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 13%;
-  margin-top: 10%;
   align-items: flex-start;
   justify-content: center;
 }

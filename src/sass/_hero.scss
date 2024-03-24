@@ -27,7 +27,7 @@
   background-color: $background-color;
   background-color: rgb(74, 73, 73);
   width: 15%;
-  z-index: 999;
+  z-index: 0;
   @media (max-width: 600px) {
     width: 100vh;
     height: 5rem;
@@ -36,14 +36,22 @@
 
 .container-hero {
   position: relative;
-  @include center();
+  margin-left: 15%;
+  margin-top: 10%;
+}
+
+.container-hero h1 {
+  text-align: start;
+  margin: 0rem 0rem 3rem 5rem;
+  font-family: $first-font;
+  font-weight: $primary-font-weight;
+  font-size: $heading-font-size;
+  text-shadow: $main-text-shadow;
 }
 
 .main-gallery {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 13%;
-  margin-top: 10%;
   align-items: flex-start;
   justify-content: center;
   @media (max-width: 800px) {
@@ -80,7 +88,7 @@
 
 .stats-cards p {
   color: $primary-cyan;
-  text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #e94be8;
+  text-shadow: $main-text-shadow;
   font-family: $first-font;
 }
 

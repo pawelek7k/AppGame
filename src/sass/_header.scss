@@ -9,7 +9,7 @@
   font-family: $first-font;
   letter-spacing: $letter-spacing;
   font-size: $primary-font-size;
-  text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #e94be8;
+  text-shadow: $main-text-shadow;
 }
 
 .logo-header span {
