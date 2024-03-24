@@ -168,3 +168,16 @@
   justify-content: space-between;
   margin-bottom: 5px;
 }
+
+.view-details-btn {
+  margin-top: 10px;
+  font-size: 9px;
+  letter-spacing: $letter-spacing;
+  cursor: pointer;
+  color: $primary-cyan;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-family: $first-font;
+  border: none;
+  border-bottom: 1px solid $primary-cyan;
+}

@@ -473,6 +473,19 @@ section {
   margin-bottom: 5px;
 }
 
+.view-details-btn {
+  margin-top: 10px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  color: rgb(0, 255, 213);
+  background-color: transparent;
+  text-transform: uppercase;
+  font-family: "Trade Winds", system-ui;
+  border: none;
+  border-bottom: 1px solid rgb(0, 255, 213);
+}
+
 .footer {
   margin-left: 15%;
   border-top: 1px solid rgb(0, 255, 213);

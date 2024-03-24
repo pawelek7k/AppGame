@@ -82,7 +82,7 @@ export async function renderGames() {
         <p>Release date:</p> <p>${released}</p></div>
         <div class="cards-home-game-genres">
         <p>Platfotm:</p> <p>${platformList}</p></div>
-
+        <button class="view-details-btn" data-id="${id}">View Details</button>
 
       </div>
 </li>
