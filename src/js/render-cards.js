@@ -3,6 +3,7 @@ const baseUrl = 'https://api.rawg.io/api/';
 export const list = document.querySelector('.main-gallery');
 const footer = document.querySelector('.footer');
 const spinner = document.querySelector('.spinner');
+const heroHeading = document.querySelector('.hero-heading');
 
 async function fetchPopularGames(page) {
   const url = new URL('games', baseUrl);
@@ -97,6 +98,7 @@ export async function renderGames() {
   });
   spinner.style.display = 'none';
   footer.style.display = 'block';
+  heroHeading.style.display = 'block';
 }
 
 renderGames();

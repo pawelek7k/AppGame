@@ -52,6 +52,7 @@
   font-size: $heading-font-size;
   text-shadow: $main-text-shadow;
   letter-spacing: $letter-spacing;
+  display: none;
   @media (max-width: 815px) {
     text-align: center;
     margin: 2rem 1rem;

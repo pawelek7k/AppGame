@@ -351,6 +351,7 @@ section {
   font-size: clamp(35px, 3vw, 50px);
   text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #e94be8;
   letter-spacing: 2px;
+  display: none;
 }
 @media (max-width: 815px) {
   .container-hero h1 {
