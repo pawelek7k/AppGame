@@ -1,13 +1,17 @@
 // import Notiflix from 'notiflix';
-// import { API_KEY, renderGames } from './render-cards';
+// import { API_KEY, list } from './render-cards'; // Importuj tylko list, ponieważ renderGames jest importowane z innego pliku
 
 // const searchForm = document.querySelector('#search-form');
 // const searchInput = document.querySelector('#search-input');
 // let currentPage = 1;
 // const perPage = 40;
 
+// // Zaimportuj funkcję renderGames z pliku './render-cards'
+// import { renderGames } from './render-cards';
+
 // searchForm.addEventListener('submit', async event => {
 //   event.preventDefault();
+//   list.innerHTML = '';
 //   const inputValue = searchInput.value.trim();
 
 //   if (!inputValue) return;
@@ -19,6 +23,7 @@
 //       Notiflix.Notify.info('No games found');
 //       return;
 //     }
+//     // Wywołaj funkcję renderGames z danymi wynikowymi
 //     renderGames(data.results);
 //   } catch (error) {
 //     console.error(error);
@@ -38,6 +43,7 @@
 //   const response = await fetch(
 //     `https://api.rawg.io/api/games?${searchParams.toString()}`
 //   );
+
 //   console.log(response);
 //   if (!response.ok) {
 //     throw new Error(response.statusText);

@@ -1,6 +1,8 @@
 export const API_KEY = '4688c8e2a1b74736a6eaf922561496b4';
 const baseUrl = 'https://api.rawg.io/api/';
 export const list = document.querySelector('.main-gallery');
+const footer = document.querySelector('.footer');
+const spinner = document.querySelector('.spinner');
 
 async function fetchPopularGames(page) {
   const url = new URL('games', baseUrl);
@@ -29,6 +31,7 @@ async function fetchGenres() {
     console.error('Error fetching genres:', error);
   }
 }
+spinner.style.display = 'block';
 
 export async function renderGames() {
   const popularGames = await fetchPopularGames(1);
@@ -92,6 +95,8 @@ export async function renderGames() {
       }
     };
   });
+  spinner.style.display = 'none';
+  footer.style.display = 'block';
 }
 
 renderGames();
