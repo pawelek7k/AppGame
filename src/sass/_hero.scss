@@ -91,9 +91,6 @@
   @media (max-width: 400px) {
     width: 100%;
   }
-  // @media (max-width: 682px) {
-  //   margin: 0 0 2rem 0;
-  // }
 }
 
 .stats-cards {
@@ -104,16 +101,15 @@
 }
 
 .stats-cards p {
-  color: $primary-cyan;
+  padding: $letter-spacing;
   text-shadow: $main-text-shadow;
-  font-family: $first-font;
 }
 
 .cards-home-game-title {
-  font-family: $first-font;
   text-align: center;
   margin: 0 1.5rem;
   margin-bottom: 20px;
+  font-weight: $primary-font-weight;
 }
 
 .first-content-card {

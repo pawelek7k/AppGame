@@ -65,32 +65,45 @@ export async function renderGames() {
         const platformList = platformNames.join(', ');
 
         const listItem = `
-<li class="card-container" data-id="${id}">
-      <div class="first-content-card" data-id="${id}" data-title="${name}" data-original_title="${name}">
-      <div class="img-content">
-        <img class="cards-home-game-image" width="310" height="170" src="${background_image}" alt="Poster ${name}" />
-        <div>
-        <div class="stats-cards">
-        <p class="cards-home-game-rating">${rating}</p>
-        <p class="cards-home-game-added">+ ${added}</p>
-        </div>
-        <span class="cards-home-game-title">${name.toUpperCase()}</span>
-
-        </div>
-      </div>
-  </div>
-      <div class="second-content-card">
-        <div class="cards-home-game-genres">
-        <p>Genres:</p> <p>${genreNames.join(', ')}</p></div>
-        <div class="cards-home-game-genres">
-        <p>Release date:</p> <p>${released}</p></div>
-        <div class="cards-home-game-genres">
-        <p>Platfotm:</p> <p>${platformList}</p></div>
-        <button class="view-details-btn" data-id="${id}">View Details</button>
-
-      </div>
-</li>
-`;
+          <li class="card-container" data-id="${id}">
+            <div class="first-content-card" data-id="${id}" data-title="${name}" data-original_title="${name}">
+              <div class="img-content">
+                <img class="cards-home-game-image" width="310" height="170" src="${background_image}" alt="Poster ${name}" />
+                <div>
+                  <div class="stats-cards">
+                    <p class="cards-home-game-rating">${rating}</p>
+                    <p class="cards-home-game-added">+ ${added}</p>
+                  </div>
+                  <span class="cards-home-game-title">${name.toUpperCase()}</span>
+                </div>
+              </div>
+            </div>
+            <div class="second-content-card">
+              ${
+                genres !== ''
+                  ? `<div class="cards-home-game-genres">
+                <p>Genres:</p> <p>${genreNames.join(', ')}</p>
+              </div>`
+                  : ''
+              }
+              ${
+                released
+                  ? `<div class="cards-home-game-genres">
+                <p>Release date:</p> <p>${released}</p>
+              </div>`
+                  : ''
+              }
+              ${
+                platformList
+                  ? `<div class="cards-home-game-genres">
+                <p>Platform:</p> <p>${platformList}</p>
+              </div>`
+                  : ''
+              }
+              <button class="view-details-btn" data-id="${id}">View Details</button>
+            </div>
+          </li>
+        `;
 
         list.insertAdjacentHTML('beforeend', listItem);
       }

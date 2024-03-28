@@ -406,16 +406,15 @@ section {
 }
 
 .stats-cards p {
-  color: rgb(0, 255, 213);
+  padding: 2px;
   text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #e94be8;
-  font-family: "Trade Winds", system-ui;
 }
 
 .cards-home-game-title {
-  font-family: "Trade Winds", system-ui;
   text-align: center;
   margin: 0 1.5rem;
   margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .first-content-card {
