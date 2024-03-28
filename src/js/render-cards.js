@@ -61,9 +61,10 @@ export async function renderGames() {
         const genreNames = gameGenres.map(genre => genre.name);
         const tagNames = tags.map(tag => tag.name);
 
-        const platformNames = gamePlatforms.map(platform => platform.name);
+        const platformNames = gamePlatforms.map(
+          gamePlatform => gamePlatform.platform.name
+        );
         const platformList = platformNames.join(', ');
-
         const listItem = `
           <li class="card-container" data-id="${id}">
             <div class="first-content-card" data-id="${id}" data-title="${name}" data-original_title="${name}">
