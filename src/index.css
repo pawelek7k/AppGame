@@ -319,8 +319,7 @@ section {
   top: 10%;
   left: 0;
   height: 90%;
-  background-color: #0c0c0c;
-  background-color: rgb(74, 73, 73);
+  background-color: rgba(0, 0, 0, 0.231372549);
   width: 15%;
   z-index: 0;
 }
