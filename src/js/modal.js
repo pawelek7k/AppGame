@@ -1,5 +1,5 @@
 const modalDetails = document.querySelector('#modalDetailsCard');
-const buttonDetails = document.querySelector('.view-details-btn');
+const buttonsDetails = document.querySelectorAll('.view-details-btn');
 
 buttonsDetails.forEach(button => {
   button.addEventListener('click', e => {

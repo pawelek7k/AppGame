@@ -1,3 +1,24 @@
-.modal {
-  display: none;
+#modalDetailsCard {
+  @include modal-styles();
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 5px;
+  width: 50%;
+  margin: 10% auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  cursor: pointer;
 }

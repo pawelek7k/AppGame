@@ -534,8 +534,36 @@ section {
   text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #e94be8;
 }
 
-.modal {
+#modalDetailsCard {
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 5px;
+  width: 50%;
+  margin: 10% auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=index.css.map */
