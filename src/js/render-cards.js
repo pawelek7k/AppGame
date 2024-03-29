@@ -69,6 +69,8 @@ async function renderGames(games) {
       tags,
       rating,
       added,
+      released,
+      parent_platforms,
     } = game;
 
     const img = new Image();
@@ -78,6 +80,9 @@ async function renderGames(games) {
       if (this.naturalWidth >= this.naturalHeight) {
         const genreNames = gameGenres.map(genre => genre.name);
         const tagNames = tags.map(tag => tag.name);
+        const platformNames = parent_platforms
+          .map(parent_platform => parent_platform.platform.name)
+          .slice(0, 2);
 
         const trailers = await fetchGameTrailers(id);
         const screenshots = trailers.results.map(trailer => ({
@@ -88,26 +93,36 @@ async function renderGames(games) {
           <li class="card-container" data-id="${id}">
             <div class="first-content-card" data-id="${id}" data-title="${name}" data-original_title="${name}">
               <div class="img-content">
-                <div class="img-wrapper">
                   <img class="cards-home-game-image" width="310" height="170" src="${background_image}" alt="Poster ${name}" />
-                  <div class="slider-wrapper" id="slider-${id}">
-                    ${screenshots
-                      .map(
-                        imageUrl =>
-                          `<img src="${imageUrl.image}" width="310" height="170"/>`
-                      )
-                      .join('')}
-                  </div>
+                <div>
+                <div class="stats-cards">
+                <p class="cards-home-game-rating">${rating}</p>
+                <p class="cards-home-game-added">+ ${added}</p>
                 </div>
                 <span class="cards-home-game-title">${name.toUpperCase()}</span>
-                <p class="cards-home-game-rating">Rating: ${rating}</p>
-                <p class="cards-home-game-added">+ ${added}</p>
+                </div>
               </div>
             </div>
             <div class="second-content-card">
-              <p class="cards-home-game-genres">Genres: ${genreNames.join(
-                ', '
-              )}</p>
+            ${
+              genreNames.length > 0
+                ? `<div class="cards-home-game-genres"><span>Genres:</span> ${genreNames.join(
+                    ', '
+                  )}</div>`
+                : ''
+            }
+            ${
+              released
+                ? `<div class="cards-home-game-genres"><span>Release date:</span> ${released}</div>`
+                : ''
+            }
+            ${
+              platformNames.length > 0
+                ? `<div class="cards-home-game-genres"><span>Platforms:</span> ${platformNames.join(
+                    ', '
+                  )}</div>`
+                : ''
+            }
               <button class="view-details-btn" data-id="${id}">View Details</button>
             </div>
           </li>
