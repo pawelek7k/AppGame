@@ -1,6 +1,8 @@
 const modalDetails = document.querySelector('#modalDetailsCard');
 const buttonsDetails = document.querySelectorAll('.view-details-btn');
 
+modalDetails.style.display = 'none';
+
 buttonsDetails.forEach(button => {
   button.addEventListener('click', e => {
     e.preventDefault();
