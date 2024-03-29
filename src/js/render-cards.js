@@ -165,14 +165,13 @@ function showModal(game) {
 
   document.querySelector('.modal').innerHTML = modalContent;
   document.querySelector('.modal').style.display = 'block';
+
+  const closeModalButton = document.querySelector('.modal-content .close');
+  closeModalButton.addEventListener('click', closeModal);
 }
 
 function closeModal() {
-  const closeModalDetails = document.querySelector('.close-modal-details');
-
-  closeModalDetails.addEventListener('click', e => {
-    document.querySelector('.modal').style.display = 'none';
-  });
+  document.querySelector('.modal').style.display = 'none';
 }
 
 fetchPopularGames(page)
