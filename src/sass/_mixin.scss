@@ -14,3 +14,11 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
 }
+
+@mixin important-text {
+  font-family: $first-font;
+  font-weight: $primary-font-weight;
+  font-size: $heading-font-size;
+  text-shadow: $main-text-shadow;
+  letter-spacing: $letter-spacing;
+}

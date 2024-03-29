@@ -47,12 +47,7 @@
 .container-hero h1 {
   text-align: start;
   margin: 0rem 0rem 3rem 5rem;
-  font-family: $first-font;
-  font-weight: $primary-font-weight;
-  font-size: $heading-font-size;
-  text-shadow: $main-text-shadow;
-  letter-spacing: $letter-spacing;
-  display: none;
+  @include important-text();
   @media (max-width: 815px) {
     text-align: center;
     margin: 2rem 1rem;
@@ -113,7 +108,6 @@
 
 .cards-home-game-title {
   text-align: center;
-  margin: 0 1.5rem;
   margin-bottom: 20px;
   font-weight: $primary-font-weight;
 }
@@ -124,7 +118,7 @@
 }
 
 .img-content > div {
-  text-align: center;
+  padding: 0rem 1.5rem;
 }
 
 .first-content-card img {

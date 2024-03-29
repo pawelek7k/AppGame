@@ -350,7 +350,6 @@ section {
   font-size: clamp(35px, 3vw, 50px);
   text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #e94be8;
   letter-spacing: 2px;
-  display: none;
 }
 @media (max-width: 815px) {
   .container-hero h1 {
@@ -417,7 +416,6 @@ section {
 
 .cards-home-game-title {
   text-align: center;
-  margin: 0 1.5rem;
   margin-bottom: 20px;
   font-weight: 600;
 }
@@ -430,7 +428,7 @@ section {
 }
 
 .img-content > div {
-  text-align: center;
+  padding: 0rem 1.5rem;
 }
 
 .first-content-card img {
