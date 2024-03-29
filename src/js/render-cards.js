@@ -74,6 +74,7 @@ async function renderGames(games) {
     } = game;
 
     const containsNSFW = tags.some(tag => tag.name.toLowerCase() === 'nsfw');
+    console.log(game);
 
     if (containsNSFW) {
       continue;
@@ -150,14 +151,24 @@ function showModal(game) {
   const modalContent = `
     <div class="modal-content">
       <span class="close">&times;</span>
+
       <h2>${game.name}</h2>
+      <div>
       <img src="${game.background_image}" width="300" alt="Poster ${
     game.name
   }" />
-      <p>Rating: ${game.rating}</p>
+    <div class="stats-modal">
+    <ul class="buttons-modal">
+    <li><button>Wishlist</button><li>
+    <li><button>Add to my games</button><li>
+    </ul>
+    <div class="stats-modal-styles"
+        <p>Rating: ${game.rating}</p>
+        <p>Added: ${game.added}</p>
+      </div>
       <p>Genres: ${game.genres.map(genre => genre.name).join(', ')}</p>
       <p>Tags: ${game.tags.map(tag => tag.name).join(', ')}</p>
-      <p>Added: ${game.added}</p>
+
       <div class="slider" id="slider-${game.id}">
         ${game.short_screenshots
           .map(
@@ -165,6 +176,8 @@ function showModal(game) {
               `<img src="${screenshot.image}" alt="Screenshot" width="300" />`
           )
           .join('')}
+      </div>
+      </div>
       </div>
     </div>
   `;

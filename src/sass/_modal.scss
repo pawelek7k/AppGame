@@ -3,12 +3,26 @@
 }
 
 .modal-content {
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.941);
+  backdrop-filter: blur(5px);
   border-radius: 5px;
   width: 50%;
   margin: 10% auto;
-  padding: 20px;
+  padding: 3rem;
+  border-radius: $spacing;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  h2 {
+    color: $primary-color;
+    font-family: $first-font;
+    font-size: $modal-font-size;
+  }
+}
+
+.modal-content > div {
+  display: flex;
+  gap: $spacing;
+  padding: $spacing;
 }
 
 .close {
@@ -16,7 +30,17 @@
   float: right;
   font-size: 28px;
   &:hover {
-    color: black;
+    color: $primary-color;
     cursor: pointer;
   }
+}
+
+.slider {
+  display: none;
+}
+
+.stats-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
