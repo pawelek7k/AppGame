@@ -73,6 +73,12 @@ async function renderGames(games) {
       parent_platforms,
     } = game;
 
+    const containsNSFW = tags.some(tag => tag.name.toLowerCase() === 'nsfw');
+
+    if (containsNSFW) {
+      continue;
+    }
+
     const img = new Image();
     img.src = background_image;
 
