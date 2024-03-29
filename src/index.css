@@ -320,7 +320,6 @@ section {
   left: 0;
   height: 90%;
   background-color: rgba(0, 0, 0, 0.231372549);
-  background-color: pink;
   width: 15%;
   z-index: 0;
 }
@@ -522,7 +521,7 @@ section {
   padding: 2rem;
   display: none;
 }
-@media (max-width: 815px) {
+@media (max-width: 1030px) {
   .footer {
     margin-left: 0%;
   }
