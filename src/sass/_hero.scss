@@ -141,14 +141,6 @@
   font-size: 10px;
 }
 
-.first-content-card img:hover {
-  backdrop-filter: grayscale(100%);
-}
-
-.card-container:not(:hover) .first-content-card img {
-  backdrop-filter: grayscale(100%);
-}
-
 .card-container:hover .second-content-card {
   display: block;
 }
