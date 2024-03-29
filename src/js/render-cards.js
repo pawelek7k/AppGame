@@ -109,10 +109,50 @@ export async function renderGames() {
         list.insertAdjacentHTML('beforeend', listItem);
       }
     };
+    document.querySelectorAll('.view-details-btn').forEach(btn => {
+      btn.addEventListener('click', async function () {
+        const gameId = this.getAttribute('data-id');
+        const game = games.find(game => game.id === parseInt(gameId));
+        if (game) {
+          showModal(game);
+        }
+      });
+    });
   });
   spinner.style.display = 'none';
   footer.style.display = 'block';
   heroHeading.style.display = 'block';
 }
 
-renderGames();
+function showModal(game) {
+  // Stworzenie treści modalu z informacjami o grze
+  const modalContent = `
+<div class="modal-content">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <h2>${game.name}</h2>
+  <img src="${game.background_image}" width="300" alt="Poster ${game.name}" />
+  <p>Rating: ${game.rating}</p>
+  <p>Genres: ${game.genres.map(genre => genre.name).join(', ')}</p>
+  <p>Tags: ${game.tags.map(tag => tag.name).join(', ')}</p>
+  <p>Added: ${game.added}</p>
+  <div class="slider" id="slider-${game.id}">
+      ${game.short_screenshots
+        .map(
+          screenshot =>
+            `<img src="${screenshot.image}" alt="Screenshot" width="300" />`
+        )
+        .join('')}
+  </div>
+</div>
+`;
+
+  // Ustawienie treści modalu
+  document.querySelector('.modal').innerHTML = modalContent;
+  // Wyświetlenie modala
+  document.querySelector('.modal').style.display = 'block';
+}
+
+// Funkcja zamykająca modal
+function closeModal() {
+  document.querySelector('.modal').style.display = 'none';
+}
