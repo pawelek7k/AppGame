@@ -193,6 +193,12 @@ function closeModal() {
   document.querySelector('.modal').style.display = 'none';
 }
 
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+});
+
 fetchPopularGames(page)
   .then(res => res.results)
   .then(renderGames)
