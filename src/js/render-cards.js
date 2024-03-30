@@ -150,38 +150,48 @@ async function renderGames(games) {
 function showModal(game) {
   const modalContent = `
   <div class="modal-content">
-  <span class="close">&times;</span>
+    <span class="close">&times;</span>
 
-  <h2>${game.name}</h2>
-  <div>
-    <img src="${game.background_image}" height="200" alt="Poster ${
+    <h2>${game.name}</h2>
+    <div>
+      <img src="${game.background_image}" height="200" alt="Poster ${
     game.name
   }" />
-    <div class="stats-modal">
-      <ul class="buttons-modal">
-        <li><button>Add to <span>Wishlist</span></button></li>
-        <li><button>Add to my <span>games</span></button></li>
-      </ul>
-      <div class="stats-modal-styles">
-        <p>Rating: <span>${game.rating}</span></p>
-        <p>Added: <span>${game.added}</span></p>
-      </div>
-      <p>Genres: <span>${game.genres
-        .map(genre => genre.name)
-        .join(', ')}</span></p>
-      <p>Tags: <span>${game.tags.map(tag => tag.name).join(', ')}</span></p>
+      <div class="stats-modal">
+        <ul class="buttons-modal">
+          <li><button>Add to <span>Wishlist</span></button></li>
+          <li><button>Add to my <span>games</span></button></li>
+        </ul>
+        <div class="stats-modal-styles">
+          <p>Rating: <span>${game.rating}</span></p>
+          <p>Added: <span>${game.added}</span></p>
+        </div>
+        ${
+          game.genres.length > 0
+            ? `<p>Genres: <span>${game.genres
+                .map(genre => genre.name)
+                .join(', ')}</span></p>`
+            : ''
+        }
+        ${
+          game.tags.length > 0
+            ? `<p>Tags: <span>${game.tags
+                .map(tag => tag.name)
+                .join(', ')}</span></p>`
+            : ''
+        }
 
-      <div class="slider" id="slider-${game.id}">
-        ${game.short_screenshots
-          .map(
-            screenshot =>
-              `<img src="${screenshot.image}" alt="Screenshot" width="300" />`
-          )
-          .join('')}
+        <div class="slider" id="slider-${game.id}">
+          ${game.short_screenshots
+            .map(
+              screenshot =>
+                `<img src="${screenshot.image}" alt="Screenshot" width="300" />`
+            )
+            .join('')}
+        </div>
       </div>
     </div>
   </div>
-</div>
   `;
 
   document.querySelector('.modal').innerHTML = modalContent;
