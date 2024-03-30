@@ -25,10 +25,17 @@
   padding: $spacing;
 }
 
+.stats-modal-styles {
+  display: flex;
+  justify-content: space-between;
+}
+
 .close {
   color: #aaa;
-  float: right;
-  font-size: 28px;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
   &:hover {
     color: $primary-color;
     cursor: pointer;
@@ -51,4 +58,24 @@
 
 .stats-modal span {
   font-family: $second-font;
+}
+
+.buttons-modal {
+  display: flex;
+  gap: $spacing;
+}
+
+.buttons-modal button {
+  background-color: $primary-color;
+  border: none;
+  font-family: $first-font;
+  padding: 1rem;
+  cursor: pointer;
+
+  span {
+    letter-spacing: $letter-spacing;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: $red;
+  }
 }

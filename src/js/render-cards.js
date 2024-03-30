@@ -157,8 +157,8 @@ function showModal(game) {
     <img src="${game.background_image}" width="300" alt="Poster ${game.name}" />
     <div class="stats-modal">
       <ul class="buttons-modal">
-        <li><button>Wishlist</button></li>
-        <li><button>Add to my games</button></li>
+        <li><button>Add to <span>Wishlist</span></button></li>
+        <li><button>Add to my <span>games</span></button></li>
       </ul>
       <div class="stats-modal-styles">
         <p>Rating: <span>${game.rating}</span></p>
