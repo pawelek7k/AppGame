@@ -163,11 +163,13 @@ function showModal(game) {
     <li><button>Add to my games</button><li>
     </ul>
     <div class="stats-modal-styles"
-        <p>Rating: ${game.rating}</p>
-        <p>Added: ${game.added}</p>
+        <p>Rating: <span>${game.rating}</span></p>
+        <p>Added: <span>${game.added}</span></p>
       </div>
-      <p>Genres: ${game.genres.map(genre => genre.name).join(', ')}</p>
-      <p>Tags: ${game.tags.map(tag => tag.name).join(', ')}</p>
+      <p>Genres: <span>${game.genres
+        .map(genre => genre.name)
+        .join(', ')}</span></p>
+      <p>Tags: <span>${game.tags.map(tag => tag.name).join(', ')}</span></p>
 
       <div class="slider" id="slider-${game.id}">
         ${game.short_screenshots
