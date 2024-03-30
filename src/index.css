@@ -557,6 +557,14 @@ section {
   gap: 10px;
 }
 
+.stats-modal p {
+  font-family: "Trade Winds", system-ui;
+}
+
+.stats-modal span {
+  font-family: "Montserrat", sans-serif;
+}
+
 .user-modal {
   display: none;
   position: fixed;

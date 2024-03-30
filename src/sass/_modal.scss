@@ -44,3 +44,11 @@
   flex-direction: column;
   gap: 10px;
 }
+
+.stats-modal p {
+  font-family: $first-font;
+}
+
+.stats-modal span {
+  font-family: $second-font;
+}

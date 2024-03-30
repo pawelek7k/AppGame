@@ -149,20 +149,18 @@ async function renderGames(games) {
 
 function showModal(game) {
   const modalContent = `
-    <div class="modal-content">
-      <span class="close">&times;</span>
+  <div class="modal-content">
+  <span class="close">&times;</span>
 
-      <h2>${game.name}</h2>
-      <div>
-      <img src="${game.background_image}" width="300" alt="Poster ${
-    game.name
-  }" />
+  <h2>${game.name}</h2>
+  <div>
+    <img src="${game.background_image}" width="300" alt="Poster ${game.name}" />
     <div class="stats-modal">
-    <ul class="buttons-modal">
-    <li><button>Wishlist</button><li>
-    <li><button>Add to my games</button><li>
-    </ul>
-    <div class="stats-modal-styles"
+      <ul class="buttons-modal">
+        <li><button>Wishlist</button></li>
+        <li><button>Add to my games</button></li>
+      </ul>
+      <div class="stats-modal-styles">
         <p>Rating: <span>${game.rating}</span></p>
         <p>Added: <span>${game.added}</span></p>
       </div>
@@ -179,9 +177,9 @@ function showModal(game) {
           )
           .join('')}
       </div>
-      </div>
-      </div>
     </div>
+  </div>
+</div>
   `;
 
   document.querySelector('.modal').innerHTML = modalContent;
