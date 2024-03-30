@@ -12,10 +12,39 @@
   border-radius: $spacing;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
+  @media (max-width: 550px) {
+    padding: 2.5rem 1rem;
+  }
+
+  img {
+    max-width: 400px;
+  }
+
+  @media (max-width: 1400px) {
+    max-width: 100%;
+    margin: 10%;
+  }
+
+  @media (max-width: 1000px) {
+    margin: 10% 5%;
+
+    img {
+      max-width: 350px;
+    }
+  }
+
   h2 {
     color: $primary-color;
     font-family: $first-font;
     font-size: $modal-font-size;
+    margin-right: 50px;
+  }
+
+  @media (max-width: 400px) {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
   }
 }
 
@@ -23,6 +52,35 @@
   display: flex;
   gap: $spacing;
   padding: $spacing;
+
+  @media (max-width: 950px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .buttons-modal {
+      justify-content: center;
+      align-items: center;
+    }
+    img {
+      height: auto;
+    }
+  }
+
+  @media (max-width: 550px) {
+    img {
+      max-width: 100%;
+    }
+    .buttons-modal {
+      flex-direction: column;
+      button {
+        padding: 0.5rem;
+        font-size: 15px;
+        width: 100%;
+      }
+      margin-bottom: 10px;
+    }
+  }
 }
 
 .stats-modal-styles {
@@ -44,8 +102,8 @@
 .close {
   color: #aaa;
   position: absolute;
-  top: 30px;
-  right: 40px;
+  top: 20px;
+  right: 35px;
   font-size: 40px;
   &:hover {
     color: $primary-color;

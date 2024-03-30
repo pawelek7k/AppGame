@@ -153,7 +153,7 @@ function showModal(game) {
   <span class="close">&times;</span>
 
   <h2>${game.name}</h2>
-  <div>
+  <div class="container-modal-div">
     <img src="${game.background_image}" height="200" alt="Poster ${
     game.name
   }" />
