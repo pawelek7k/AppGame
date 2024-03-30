@@ -541,6 +541,17 @@ section {
   display: flex;
   justify-content: space-between;
 }
+.stats-modal-styles p {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.stats-modal-styles span {
+  color: white;
+  letter-spacing: 2px;
+  font-weight: 300;
+  border-bottom: 0.5px solid rgb(0, 255, 213);
+}
 
 .close {
   color: #aaa;
@@ -567,7 +578,6 @@ section {
 .stats-modal p {
   font-family: "Trade Winds", system-ui;
 }
-
 .stats-modal span {
   font-family: "Montserrat", sans-serif;
 }
@@ -610,7 +620,7 @@ section {
   color: #c7c7c7;
 }
 .buttons-modal button:hover span {
-  color: #c7c7c7;
+  color: white;
 }
 .buttons-modal button:before {
   top: 100%;
