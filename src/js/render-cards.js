@@ -44,7 +44,7 @@ async function fetchGameById(id) {
   }
 }
 
-async function fetchGenres() {
+export async function fetchGenres() {
   const url = new URL('https://api.rawg.io/api/genres');
   url.searchParams.append('key', API_KEY);
 
