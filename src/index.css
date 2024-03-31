@@ -463,7 +463,7 @@ section {
 
 .container-hero h1 {
   text-align: start;
-  margin: 0rem 0rem 3rem 5rem;
+  margin: 2rem 0rem 3rem 5rem;
   font-family: "Trade Winds", system-ui;
   font-weight: 600;
   font-size: clamp(35px, 3vw, 50px);
