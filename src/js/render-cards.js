@@ -18,18 +18,18 @@ async function fetchPopularGames(page) {
   }
 }
 
-async function fetchGameTrailers(gameId) {
-  const url = new URL(`games/${gameId}/movies`, baseUrl);
-  url.searchParams.append('key', API_KEY);
+// async function fetchGameTrailers(gameId) {
+//   const url = new URL(`games/${gameId}/movies`, baseUrl);
+//   url.searchParams.append('key', API_KEY);
 
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error fetching game trailers:', error);
-  }
-}
+//   try {
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.error('Error fetching game trailers:', error);
+//   }
+// }
 
 async function fetchGameById(id) {
   const url = new URL(`games/${id}`, baseUrl);
@@ -51,7 +51,7 @@ export async function fetchGenres() {
   try {
     const res = await fetch(url);
     const data = await res.json();
-    return data;
+    return data.results;
   } catch (error) {
     console.error('Error fetching genres:', error);
   }
@@ -90,10 +90,10 @@ async function renderGames(games) {
           .map(parent_platform => parent_platform.platform.name)
           .slice(0, 2);
 
-        const trailers = await fetchGameTrailers(id);
-        const screenshots = trailers.results.map(trailer => ({
-          image: trailer.data.max,
-        }));
+        // const trailers = await fetchGameTrailers(id);
+        // const screenshots = trailers.results.map(trailer => ({
+        //   image: trailer.data.max,
+        // }));
 
         const listItem = `
           <li class="card-container" data-id="${id}">
