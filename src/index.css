@@ -52,6 +52,14 @@
     transform: translate(0);
   }
 }
+@keyframes marquee {
+  0% {
+    transform: translateX(60%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 .wave-group {
   position: relative;
 }
@@ -306,6 +314,14 @@
     transform: translate(0);
   }
 }
+@keyframes marquee {
+  0% {
+    transform: translateX(60%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 body {
   background-color: #0c0c0c;
   color: #c7c7c7;
@@ -383,6 +399,14 @@ section {
     transform: translate(0);
   }
 }
+@keyframes marquee {
+  0% {
+    transform: translateX(60%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 @keyframes glitch_4011 {
   0% {
     clip-path: var(--move1);
@@ -427,6 +451,14 @@ section {
   100% {
     clip-path: var(--move1);
     transform: translate(0);
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(60%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 .custom-shape-divider-top-1710960493 {
@@ -840,6 +872,9 @@ section {
   letter-spacing: 2px;
   font-weight: 600;
   font-family: "Trade Winds", system-ui;
+}
+.follow-us span {
+  animation: marquee 20s linear infinite;
 }
 
 .user-modal {

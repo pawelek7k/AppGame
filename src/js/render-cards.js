@@ -144,7 +144,7 @@ export async function renderGames(games) {
 function showModal(game) {
   const modalContent = `
   <div class="modal-content">
-  <div class="follow-us">Follow us!</div>
+  <div class="follow-us"><span>Follow us!</span></div>
   <span class="close">&times;</span>
 
   <h2>${game.name}</h2>

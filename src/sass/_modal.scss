@@ -201,4 +201,7 @@
   letter-spacing: $letter-spacing;
   font-weight: $primary-font-weight;
   font-family: $first-font;
+  span {
+    animation: marquee 20s linear infinite;
+  }
 }
