@@ -7,9 +7,11 @@ export async function generateGenresOptions() {
 
   genres.forEach(genre => {
     const listItem = document.createElement('li');
+    const spanItem = document.createElement('span');
     listItem.dataset.value = genre.id;
-    listItem.textContent = genre.name;
+    spanItem.textContent = genre.name;
     selectHtml.appendChild(listItem);
+    listItem.appendChild(spanItem);
   });
 }
 
