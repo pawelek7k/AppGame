@@ -90,11 +90,6 @@ async function renderGames(games) {
           .map(parent_platform => parent_platform.platform.name)
           .slice(0, 2);
 
-        // const trailers = await fetchGameTrailers(id);
-        // const screenshots = trailers.results.map(trailer => ({
-        //   image: trailer.data.max,
-        // }));
-
         const listItem = `
           <li class="card-container" data-id="${id}">
             <div class="first-content-card" data-id="${id}" data-title="${name}" data-original_title="${name}">
@@ -170,14 +165,7 @@ function showModal(game) {
         .join(', ')}</span></p>
       <p>Tags: <span>${game.tags.map(tag => tag.name).join(', ')}</span></p>
 
-      <div class="slider" id="slider-${game.id}">
-        ${game.short_screenshots
-          .map(
-            screenshot =>
-              `<img src="${screenshot.image}" alt="Screenshot" width="300" />`
-          )
-          .join('')}
-      </div>
+
     </div>
   </div>
 </div>
