@@ -918,7 +918,7 @@ section {
   .marquee-container #genre-list {
     white-space: nowrap;
     display: inline-block;
-    animation: marquee 15s linear infinite;
+    animation: marquee 20s linear infinite;
   }
   .marquee-container #genre-list:hover {
     animation-play-state: paused;
@@ -929,7 +929,7 @@ section {
   }
   @keyframes marquee {
     0% {
-      transform: translateX(100%);
+      transform: translateX(60%);
     }
     100% {
       transform: translateX(-100%);

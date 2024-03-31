@@ -14,7 +14,6 @@
     background-color: $back-header;
     border: 1px solid $death-green;
     z-index: 999;
-    // overflow-x: auto;
   }
 }
 
@@ -48,7 +47,7 @@
     #genre-list {
       white-space: nowrap;
       display: inline-block;
-      animation: marquee 15s linear infinite;
+      animation: marquee 20s linear infinite;
 
       &:hover {
         animation-play-state: paused;
@@ -63,7 +62,7 @@
 
   @keyframes marquee {
     0% {
-      transform: translateX(100%);
+      transform: translateX(60%);
     }
     100% {
       transform: translateX(-100%);
