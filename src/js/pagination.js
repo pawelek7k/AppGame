@@ -13,6 +13,7 @@ prevPageBtn.addEventListener('click', async () => {
     try {
       const data = await fetchPopularGames(page - 1);
       renderGames(data.results);
+      page--;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (error) {
       console.error('Error fetching and rendering games:', error);
