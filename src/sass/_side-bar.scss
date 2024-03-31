@@ -37,3 +37,34 @@
     }
   }
 }
+
+@media (max-width: 1030px) {
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+
+    #genre-list {
+      white-space: nowrap;
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+
+      &:hover {
+        animation-play-state: paused;
+      }
+
+      li {
+        display: inline-block;
+        padding: 0 10px;
+      }
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}

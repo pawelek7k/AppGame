@@ -908,4 +908,31 @@ section {
   cursor: pointer;
 }
 
+@media (max-width: 1030px) {
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  .marquee-container #genre-list {
+    white-space: nowrap;
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+  }
+  .marquee-container #genre-list:hover {
+    animation-play-state: paused;
+  }
+  .marquee-container #genre-list li {
+    display: inline-block;
+    padding: 0 10px;
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
 /*# sourceMappingURL=index.css.map */
