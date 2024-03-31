@@ -52,16 +52,6 @@
   padding-bottom: 5rem;
 }
 
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: $death-green;
-  border-radius: $spacing;
-  cursor: pointer;
-}
-
 .card-container {
   width: 310px;
   background-color: rgb(11, 9, 9);

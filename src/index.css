@@ -151,7 +151,7 @@
   height: 10%;
   z-index: 999;
   backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.231372549);
+  background-color: rgba(0, 0, 0, 0.89);
 }
 
 .buttons-register {
@@ -489,16 +489,6 @@ section {
   align-items: self-start;
   gap: 2rem;
   padding-bottom: 5rem;
-}
-
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(8, 71, 67, 0.4862745098);
-  border-radius: 2rem;
-  cursor: pointer;
 }
 
 .card-container {
