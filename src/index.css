@@ -646,7 +646,7 @@ section {
   display: none;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -657,9 +657,8 @@ section {
   background-color: rgba(0, 0, 0, 0.941);
   backdrop-filter: blur(5px);
   border-radius: 5px;
-  max-width: 60%;
-  margin: 10% auto;
-  padding: 3rem;
+  height: 100vh;
+  position: relative;
   border-radius: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -700,34 +699,34 @@ section {
   }
 }
 
-.modal-content > div {
+.container-modal-div {
   display: flex;
   gap: 2rem;
   padding: 2rem;
 }
 @media (max-width: 950px) {
-  .modal-content > div {
+  .container-modal-div {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .modal-content > div .buttons-modal {
+  .container-modal-div .buttons-modal {
     justify-content: center;
     align-items: center;
   }
-  .modal-content > div img {
+  .container-modal-div img {
     height: auto;
   }
 }
 @media (max-width: 550px) {
-  .modal-content > div img {
+  .container-modal-div img {
     max-width: 100%;
   }
-  .modal-content > div .buttons-modal {
+  .container-modal-div .buttons-modal {
     flex-direction: column;
     margin-bottom: 10px;
   }
-  .modal-content > div .buttons-modal button {
+  .container-modal-div .buttons-modal button {
     padding: 0.5rem;
     font-size: 15px;
     width: 100%;
@@ -753,7 +752,7 @@ section {
 .close {
   color: #aaa;
   position: absolute;
-  top: 20px;
+  top: 70px;
   right: 35px;
   font-size: 40px;
 }
@@ -833,11 +832,21 @@ section {
   transition: background 0s;
 }
 
+.follow-us {
+  color: white;
+  background-color: rgba(8, 71, 67, 0.4862745098);
+  width: 100%;
+  padding: 0.5rem 0rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-family: "Trade Winds", system-ui;
+}
+
 .user-modal {
   display: none;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
