@@ -74,7 +74,6 @@ async function renderGames(games) {
     } = game;
 
     const containsNSFW = tags.some(tag => tag.name.toLowerCase() === 'nsfw');
-    console.log(game);
 
     if (containsNSFW) {
       continue;
