@@ -1,9 +1,9 @@
 const API_KEY = '4688c8e2a1b74736a6eaf922561496b4';
-let page = 1;
+export let page = 1;
 const baseUrl = 'https://api.rawg.io/api/';
 const list = document.querySelector('.main-gallery');
 
-async function fetchPopularGames(page) {
+export async function fetchPopularGames(page) {
   const url = new URL('games', baseUrl);
   url.searchParams.append('ordering', '-rating');
   url.searchParams.append('key', API_KEY);
@@ -31,7 +31,7 @@ async function fetchPopularGames(page) {
 //   }
 // }
 
-async function fetchGameById(id) {
+export async function fetchGameById(id) {
   const url = new URL(`games/${id}`, baseUrl);
   url.searchParams.append('key', API_KEY);
 
@@ -57,7 +57,7 @@ export async function fetchGenres() {
   }
 }
 
-async function renderGames(games) {
+export async function renderGames(games) {
   list.innerHTML = '';
 
   for (const game of games) {
