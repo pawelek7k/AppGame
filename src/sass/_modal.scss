@@ -31,7 +31,6 @@
   @include center();
   gap: $spacing;
   padding: $spacing;
-  flex-direction: column;
 
   @media (max-width: 950px) {
     flex-direction: column;
@@ -87,7 +86,7 @@
   top: 70px;
   right: 35px;
   font-size: 40px;
-  z-index: 2;
+  z-index: 999;
   &:hover {
     color: $primary-color;
     cursor: pointer;
@@ -213,4 +212,10 @@
     rgba(0, 0, 0, 0.966),
     rgb(0, 0, 0)
   );
+}
+
+.screenshots-modal {
+  z-index: 2;
+  height: 200px;
+  width: 50%;
 }

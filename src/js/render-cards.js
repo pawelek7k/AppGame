@@ -71,6 +71,7 @@ export async function renderGames(games) {
       added,
       released,
       parent_platforms,
+      short_screenshots,
     } = game;
 
     const containsNSFW = tags.some(tag => tag.name.toLowerCase() === 'nsfw');
@@ -142,49 +143,68 @@ export async function renderGames(games) {
 }
 
 function showModal(game) {
+  const screenshots = game.short_screenshots.slice(0, 4);
+  const screenshotsHtml = screenshots
+    .map(
+      (screenshot, index) =>
+        `<img src="${screenshot.image}" alt="Screenshot ${
+          index + 1
+        }" width="300" />`
+    )
+    .join('');
+
+  const moreButtonHtml =
+    game.short_screenshots.length > 6
+      ? '<button class="view-more-screenshots-btn">Zobacz więcej</button>'
+      : '';
+
   const modalContent = `
   <div class="modal-content" style="background-image: url(${
     game.background_image
   }); background-repeat: no-repeat; background-size: cover;">
-  <div class="gradient-overlay"></div>
-  <div class="follow-us"><span>Follow us!</span></div>
-  <span class="close">&times;</span>
-  <div class="container-modal-div">
-  <h2>${game.name}</h2>
-    <div class="stats-modal">
-      <ul class="buttons-modal">
-        <li>
-          <button>
-            Add to <span>Wishlist</span>
-            <span class="stat-modal-btn">${game.added}</span>
-          </button>
-        </li>
-        <li><button>Add to my <span>games</span></button></li>
-      </ul>
-      <div class="stats-modal-styles">
-        <p>Rating: <span>${game.rating}</span></p>
-        <p>Added: <span>${game.added}</span></p>
+    <div class="gradient-overlay"></div>
+    <div class="follow-us"><span>Follow us!</span></div>
+    <span class="close">&times;</span>
+    <h2>${game.name}</h2>
+    <div class="container-modal-div">
+      <div class="screenshots-modal">
+        ${screenshotsHtml}
+        ${moreButtonHtml}
       </div>
-      ${
-        game.genres.length > 0
-          ? `
-        <p>Genres: <span>${game.genres
-          .map(genre => genre.name)
-          .join(', ')}</span></p>
-      `
-          : ''
-      }
-      ${
-        game.tags.length > 0
-          ? `
-        <p>Tags: <span>${game.tags.map(tag => tag.name).join(', ')}</span></p>
-      `
-          : ''
-      }
+      <div class="stats-modal">
+        <ul class="buttons-modal">
+          <li>
+            <button>
+              Add to <span>Wishlist</span>
+              <span class="stat-modal-btn">${game.added}</span>
+            </button>
+          </li>
+          <li><button>Add to my <span>games</span></button></li>
+        </ul>
+        <div class="stats-modal-styles">
+          <p>Rating: <span>${game.rating}</span></p>
+          <p>Added: <span>${game.added}</span></p>
+        </div>
+        ${
+          game.genres.length > 0
+            ? `
+          <p>Genres: <span>${game.genres
+            .map(genre => genre.name)
+            .join(', ')}</span></p>
+        `
+            : ''
+        }
+        ${
+          game.tags.length > 0
+            ? `
+          <p>Tags: <span>${game.tags.map(tag => tag.name).join(', ')}</span></p>
+        `
+            : ''
+        }
+      </div>
     </div>
   </div>
-</div>
-  `;
+`;
 
   document.querySelector('.modal').innerHTML = modalContent;
   document.querySelector('.modal').style.display = 'block';
