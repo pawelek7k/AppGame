@@ -716,7 +716,7 @@ section {
 .modal-content h2 {
   color: #c7c7c7;
   font-family: "Trade Winds", system-ui;
-  font-size: clamp(20px, 3vw, 35px);
+  font-size: clamp(10px, 3vw, 20px);
   margin: 3rem;
 }
 @media (max-width: 400px) {
@@ -804,6 +804,7 @@ section {
 
 .stats-modal p {
   font-family: "Trade Winds", system-ui;
+  font-size: clamp(10px, 3vw, 20px);
 }
 .stats-modal span {
   font-family: "Montserrat", sans-serif;

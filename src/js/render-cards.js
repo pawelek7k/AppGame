@@ -78,6 +78,7 @@ export async function renderGames(games) {
     if (containsNSFW) {
       continue;
     }
+    console.log(game);
 
     const img = new Image();
     img.src = background_image;
@@ -154,7 +155,8 @@ function showModal(game) {
 
     <div class="stats-modal">
       <ul class="buttons-modal">
-        <li><button>Add to <span>Wishlist</span></button></li>
+        <li><button>Add to <span>Wishlist</span>
+        <span>${game.added}</span></button></li>
         <li><button>Add to my <span>games</span></button></li>
       </ul>
       <div class="stats-modal-styles">

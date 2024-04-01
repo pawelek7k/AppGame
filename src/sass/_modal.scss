@@ -86,6 +86,7 @@
 .stats-modal-styles {
   display: flex;
   justify-content: space-between;
+
   p {
     display: flex;
     flex-direction: column;
@@ -124,6 +125,7 @@
 .stats-modal {
   p {
     font-family: $first-font;
+    font-size: $modal-font-size;
   }
   span {
     font-family: $second-font;
