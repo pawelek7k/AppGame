@@ -6,12 +6,17 @@
   backdrop-filter: blur(5px);
   border-radius: 5px;
   height: 100vh;
+
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-position: center;
 
   @media (max-width: 1400px) {
     max-width: 100%;
+  }
+
+  @media (max-width: 1365px) {
+    overflow-y: auto;
   }
 
   .title-modal-content {
@@ -28,8 +33,8 @@
 
 .container-modal-div {
   @include center();
-  gap: $spacing;
   padding: $spacing;
+  max-width: 1800px;
 
   @media (max-width: 950px) {
     flex-direction: column;
@@ -43,6 +48,10 @@
     img {
       height: auto;
     }
+  }
+  @media (max-width: 1365px) {
+    flex-direction: column-reverse;
+    gap: $spacing;
   }
 
   @media (max-width: 550px) {
@@ -212,15 +221,15 @@
 
 .screenshots-modal {
   z-index: 2;
-  display: flex;
+  @include center();
   width: 50%;
   flex-wrap: wrap;
+  align-items: start;
   gap: 1rem;
 
   img {
     max-height: 200px;
     transition: $transition;
-    border-radius: $spacing;
 
     &:hover {
       filter: grayscale(1);
