@@ -8,11 +8,7 @@
   height: 100vh;
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-  @media (max-width: 550px) {
-    padding: 2.5rem 1rem;
-    background-position: center;
-  }
+  background-position: center;
 
   @media (max-width: 1400px) {
     max-width: 100%;
