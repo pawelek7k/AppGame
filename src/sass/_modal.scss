@@ -16,9 +16,9 @@
     padding: 2.5rem 1rem;
   }
 
-  img {
-    max-width: 400px;
-  }
+  // img {
+  //   max-width: 400px;
+  // }
 
   @media (max-width: 1400px) {
     max-width: 100%;
@@ -37,7 +37,7 @@
     color: $primary-color;
     font-family: $first-font;
     font-size: $modal-font-size;
-    margin-right: 50px;
+    margin: 3rem;
   }
 
   @media (max-width: 400px) {
@@ -49,7 +49,7 @@
 }
 
 .container-modal-div {
-  display: flex;
+  @include center();
   gap: $spacing;
   padding: $spacing;
 

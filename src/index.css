@@ -699,9 +699,6 @@ section {
     padding: 2.5rem 1rem;
   }
 }
-.modal-content img {
-  max-width: 400px;
-}
 @media (max-width: 1400px) {
   .modal-content {
     max-width: 100%;
@@ -720,7 +717,7 @@ section {
   color: #c7c7c7;
   font-family: "Trade Winds", system-ui;
   font-size: clamp(20px, 3vw, 35px);
-  margin-right: 50px;
+  margin: 3rem;
 }
 @media (max-width: 400px) {
   .modal-content {
@@ -732,6 +729,8 @@ section {
 }
 
 .container-modal-div {
+  align-items: center;
+  justify-content: center;
   display: flex;
   gap: 2rem;
   padding: 2rem;

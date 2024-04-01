@@ -149,9 +149,9 @@ function showModal(game) {
 
   <h2>${game.name}</h2>
   <div class="container-modal-div">
-    <img src="${game.background_image}" height="200" alt="Poster ${
-    game.name
-  }" />
+
+  <img src="${game.background_image}" height="400" alt="Poster ${game.name}" />
+
     <div class="stats-modal">
       <ul class="buttons-modal">
         <li><button>Add to <span>Wishlist</span></button></li>
