@@ -686,12 +686,10 @@ section {
 }
 
 .modal-content {
-  background-color: rgba(0, 0, 0, 0.941);
   backdrop-filter: blur(5px);
   border-radius: 5px;
   height: 100vh;
   position: relative;
-  border-radius: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 550px) {
@@ -713,10 +711,14 @@ section {
     max-width: 350px;
   }
 }
+.modal-content .title-modal-content {
+  z-index: 2;
+}
 .modal-content h2 {
   color: #c7c7c7;
   font-family: "Trade Winds", system-ui;
-  font-size: clamp(10px, 3vw, 20px);
+  font-size: clamp(35px, 3vw, 50px);
+  z-index: 2;
   margin: 3rem;
 }
 @media (max-width: 400px) {
@@ -734,6 +736,7 @@ section {
   display: flex;
   gap: 2rem;
   padding: 2rem;
+  flex-direction: column;
 }
 @media (max-width: 950px) {
   .container-modal-div {
@@ -766,6 +769,7 @@ section {
 
 .stats-modal-styles {
   display: flex;
+  z-index: 2;
   justify-content: space-between;
 }
 .stats-modal-styles p {
@@ -786,6 +790,7 @@ section {
   top: 70px;
   right: 35px;
   font-size: 40px;
+  z-index: 2;
 }
 .close:hover {
   color: #c7c7c7;
@@ -802,6 +807,9 @@ section {
   gap: 10px;
 }
 
+.stats-modal {
+  z-index: 2;
+}
 .stats-modal p {
   font-family: "Trade Winds", system-ui;
   font-size: clamp(10px, 3vw, 20px);
@@ -827,6 +835,7 @@ section {
   border: none;
   font-family: "Trade Winds", system-ui;
   padding: 1rem;
+  z-index: 2;
   cursor: pointer;
 }
 .buttons-modal button span {
@@ -873,7 +882,7 @@ section {
 
 .follow-us {
   color: white;
-  background-color: rgba(8, 71, 67, 0.4862745098);
+  background-color: red;
   width: 100%;
   padding: 0.5rem 0rem;
   letter-spacing: 2px;
@@ -882,6 +891,16 @@ section {
 }
 .follow-us span {
   animation: marquee 20s linear infinite;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.966), rgb(0, 0, 0));
 }
 
 .user-modal {

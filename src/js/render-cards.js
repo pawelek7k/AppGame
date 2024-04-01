@@ -78,7 +78,6 @@ export async function renderGames(games) {
     if (containsNSFW) {
       continue;
     }
-    console.log(game);
 
     const img = new Image();
     img.src = background_image;
@@ -144,14 +143,14 @@ export async function renderGames(games) {
 
 function showModal(game) {
   const modalContent = `
-  <div class="modal-content">
+  <div class="modal-content" style="background-image: url(${
+    game.background_image
+  }); background-repeat: no-repeat; background-size: cover;">
+  <div class="gradient-overlay"></div>
   <div class="follow-us"><span>Follow us!</span></div>
   <span class="close">&times;</span>
-  <h2>${game.name}</h2>
   <div class="container-modal-div">
-    <img src="${game.background_image}" height="400" alt="Poster ${
-    game.name
-  }" />
+  <h2>${game.name}</h2>
     <div class="stats-modal">
       <ul class="buttons-modal">
         <li>

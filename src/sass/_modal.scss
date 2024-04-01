@@ -3,22 +3,15 @@
 }
 
 .modal-content {
-  background-color: rgba(0, 0, 0, 0.941);
   backdrop-filter: blur(5px);
   border-radius: 5px;
   height: 100vh;
   position: relative;
-  // padding: 3rem;
-  border-radius: $spacing;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 550px) {
     padding: 2.5rem 1rem;
   }
-
-  // img {
-  //   max-width: 400px;
-  // }
 
   @media (max-width: 1400px) {
     max-width: 100%;
@@ -33,10 +26,15 @@
     }
   }
 
+  .title-modal-content {
+    z-index: 2;
+  }
+
   h2 {
     color: $primary-color;
     font-family: $first-font;
-    font-size: $modal-font-size;
+    font-size: $heading-font-size;
+    z-index: 2;
     margin: 3rem;
   }
 
@@ -52,6 +50,7 @@
   @include center();
   gap: $spacing;
   padding: $spacing;
+  flex-direction: column;
 
   @media (max-width: 950px) {
     flex-direction: column;
@@ -85,6 +84,7 @@
 
 .stats-modal-styles {
   display: flex;
+  z-index: 2;
   justify-content: space-between;
 
   p {
@@ -106,6 +106,7 @@
   top: 70px;
   right: 35px;
   font-size: 40px;
+  z-index: 2;
   &:hover {
     color: $primary-color;
     cursor: pointer;
@@ -123,6 +124,7 @@
 }
 
 .stats-modal {
+  z-index: 2;
   p {
     font-family: $first-font;
     font-size: $modal-font-size;
@@ -150,6 +152,7 @@
     border: none;
     font-family: $first-font;
     padding: 1rem;
+    z-index: 2;
     cursor: pointer;
 
     span {
@@ -205,7 +208,7 @@
 
 .follow-us {
   color: white;
-  background-color: $death-green;
+  background-color: red;
   width: 100%;
   padding: 0.5rem 0rem;
   letter-spacing: $letter-spacing;
@@ -214,4 +217,19 @@
   span {
     animation: marquee 20s linear infinite;
   }
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.76),
+    rgba(0, 0, 0, 0.966),
+    rgb(0, 0, 0)
+  );
 }
