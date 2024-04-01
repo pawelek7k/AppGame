@@ -706,7 +706,6 @@ section {
   font-family: "Trade Winds", system-ui;
   font-size: clamp(35px, 3vw, 50px);
   z-index: 2;
-  margin: 3rem;
 }
 
 .container-modal-div {
@@ -775,13 +774,10 @@ section {
   cursor: pointer;
 }
 
-.slider {
-  display: none;
-}
-
 .stats-modal {
   display: flex;
   flex-direction: column;
+  width: 50%;
   gap: 10px;
 }
 
@@ -883,8 +879,18 @@ section {
 
 .screenshots-modal {
   z-index: 2;
-  height: 200px;
+  display: flex;
   width: 50%;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.screenshots-modal img {
+  max-height: 200px;
+  transition: 250ms ease-in-out;
+  border-radius: 2rem;
+}
+.screenshots-modal img:hover {
+  filter: grayscale(1);
 }
 
 .user-modal {

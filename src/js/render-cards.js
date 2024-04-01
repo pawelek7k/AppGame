@@ -143,7 +143,7 @@ export async function renderGames(games) {
 }
 
 function showModal(game) {
-  const screenshots = game.short_screenshots.slice(0, 4);
+  const screenshots = game.short_screenshots.slice(0, 6);
   const screenshotsHtml = screenshots
     .map(
       (screenshot, index) =>
@@ -153,11 +153,6 @@ function showModal(game) {
     )
     .join('');
 
-  const moreButtonHtml =
-    game.short_screenshots.length > 6
-      ? '<button class="view-more-screenshots-btn">Zobacz więcej</button>'
-      : '';
-
   const modalContent = `
   <div class="modal-content" style="background-image: url(${
     game.background_image
@@ -165,13 +160,15 @@ function showModal(game) {
     <div class="gradient-overlay"></div>
     <div class="follow-us"><span>Follow us!</span></div>
     <span class="close">&times;</span>
-    <h2>${game.name}</h2>
+
     <div class="container-modal-div">
       <div class="screenshots-modal">
+
         ${screenshotsHtml}
-        ${moreButtonHtml}
+
       </div>
       <div class="stats-modal">
+      <h2>${game.name}</h2>
         <ul class="buttons-modal">
           <li>
             <button>

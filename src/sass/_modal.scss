@@ -23,7 +23,6 @@
     font-family: $first-font;
     font-size: $heading-font-size;
     z-index: 2;
-    margin: 3rem;
   }
 }
 
@@ -93,13 +92,10 @@
   }
 }
 
-.slider {
-  display: none;
-}
-
 .stats-modal {
   display: flex;
   flex-direction: column;
+  width: 50%;
   gap: 10px;
 }
 
@@ -216,6 +212,18 @@
 
 .screenshots-modal {
   z-index: 2;
-  height: 200px;
+  display: flex;
   width: 50%;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  img {
+    max-height: 200px;
+    transition: $transition;
+    border-radius: $spacing;
+
+    &:hover {
+      filter: grayscale(1);
+    }
+  }
 }
