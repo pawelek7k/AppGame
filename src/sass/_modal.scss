@@ -159,6 +159,14 @@
       color: $red;
     }
 
+    .stat-modal-btn {
+      color: $background-color;
+      font-weight: 500;
+      position: absolute;
+      bottom: 0;
+      right: 1;
+    }
+
     &:before {
       content: '';
       position: absolute;

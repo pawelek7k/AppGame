@@ -835,6 +835,13 @@ section {
   font-weight: 900;
   color: rgb(255, 0, 0);
 }
+.buttons-modal button .stat-modal-btn {
+  color: #0c0c0c;
+  font-weight: 500;
+  position: absolute;
+  bottom: 0;
+  right: 1;
+}
 .buttons-modal button:before {
   content: "";
   position: absolute;

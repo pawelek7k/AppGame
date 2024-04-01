@@ -147,28 +147,41 @@ function showModal(game) {
   <div class="modal-content">
   <div class="follow-us"><span>Follow us!</span></div>
   <span class="close">&times;</span>
-
   <h2>${game.name}</h2>
   <div class="container-modal-div">
-
-  <img src="${game.background_image}" height="400" alt="Poster ${game.name}" />
-
+    <img src="${game.background_image}" height="400" alt="Poster ${
+    game.name
+  }" />
     <div class="stats-modal">
       <ul class="buttons-modal">
-        <li><button>Add to <span>Wishlist</span>
-        <span>${game.added}</span></button></li>
+        <li>
+          <button>
+            Add to <span>Wishlist</span>
+            <span class="stat-modal-btn">${game.added}</span>
+          </button>
+        </li>
         <li><button>Add to my <span>games</span></button></li>
       </ul>
       <div class="stats-modal-styles">
         <p>Rating: <span>${game.rating}</span></p>
         <p>Added: <span>${game.added}</span></p>
       </div>
-      <p>Genres: <span>${game.genres
-        .map(genre => genre.name)
-        .join(', ')}</span></p>
-      <p>Tags: <span>${game.tags.map(tag => tag.name).join(', ')}</span></p>
-
-
+      ${
+        game.genres.length > 0
+          ? `
+        <p>Genres: <span>${game.genres
+          .map(genre => genre.name)
+          .join(', ')}</span></p>
+      `
+          : ''
+      }
+      ${
+        game.tags.length > 0
+          ? `
+        <p>Tags: <span>${game.tags.map(tag => tag.name).join(', ')}</span></p>
+      `
+          : ''
+      }
     </div>
   </div>
 </div>
