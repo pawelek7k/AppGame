@@ -26,6 +26,8 @@ searchForm.addEventListener('submit', async event => {
       heading.innerHTML = 'No games found';
       return;
     }
+    prevPageBtn.style.display = 'block';
+    nextPageBtn.style.display = 'block';
 
     renderGames(data.results);
   } catch (error) {
