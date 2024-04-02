@@ -15,10 +15,6 @@
     max-width: 100%;
   }
 
-  @media (max-width: 1365px) {
-    overflow-y: auto;
-  }
-
   .title-modal-content {
     z-index: 2;
   }
@@ -49,10 +45,6 @@
       height: auto;
     }
   }
-  @media (max-width: 1365px) {
-    flex-direction: column-reverse;
-    gap: $spacing;
-  }
 
   @media (max-width: 550px) {
     img {
@@ -67,6 +59,10 @@
       }
       margin-bottom: 10px;
     }
+  }
+  @media (max-width: 1365px) {
+    padding: 0;
+    padding-top: 2rem;
   }
 }
 
@@ -226,6 +222,9 @@
   flex-wrap: wrap;
   align-items: start;
   gap: 1rem;
+  @media (max-width: 1365px) {
+    display: none;
+  }
 
   img {
     max-height: 200px;
