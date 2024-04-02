@@ -154,3 +154,7 @@
     left: 0;
   }
 }
+
+@mixin light-theme() {
+  background-color: $back-light-theme;
+}
