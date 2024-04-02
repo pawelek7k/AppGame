@@ -23,6 +23,7 @@ searchForm.addEventListener('submit', async event => {
       Notiflix.Notify.info('No games found');
       prevPageBtn.style.display = 'none';
       nextPageBtn.style.display = 'none';
+      heading.innerHTML = 'No games found';
       return;
     }
 
