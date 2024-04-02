@@ -1,12 +1,11 @@
 import { fetchPopularGames, renderGames } from './render-cards';
-const loadMoreBtn = document.querySelector('.load-more-button');
 
 let page = 1;
 
 let perPage = 40;
 
-const prevPageBtn = document.querySelector('.prev-page-button');
-const nextPageBtn = document.querySelector('.next-page-button');
+export const prevPageBtn = document.querySelector('.prev-page-button');
+export const nextPageBtn = document.querySelector('.next-page-button');
 
 prevPageBtn.addEventListener('click', async () => {
   if (page > 1) {

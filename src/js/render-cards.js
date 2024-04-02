@@ -1,3 +1,5 @@
+import prevPageBtn from './pagination';
+
 export const API_KEY = '4688c8e2a1b74736a6eaf922561496b4';
 export let page = 1;
 const baseUrl = 'https://api.rawg.io/api/';
@@ -17,19 +19,6 @@ export async function fetchPopularGames(page) {
     console.error('Error fetching popular games:', error);
   }
 }
-
-// async function fetchGameTrailers(gameId) {
-//   const url = new URL(`games/${gameId}/movies`, baseUrl);
-//   url.searchParams.append('key', API_KEY);
-
-//   try {
-//     const response = await fetch(url);
-//     const data = await response.json();
-//     return data;
-//   } catch (error) {
-//     console.error('Error fetching game trailers:', error);
-//   }
-// }
 
 export async function fetchGameById(id) {
   const url = new URL(`games/${id}`, baseUrl);

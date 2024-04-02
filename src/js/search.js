@@ -1,4 +1,5 @@
 import Notiflix from 'notiflix';
+import { nextPageBtn, prevPageBtn } from './pagination';
 import { API_KEY, list, renderGames } from './render-cards';
 
 const searchForm = document.querySelector('#search-form');
@@ -20,6 +21,8 @@ searchForm.addEventListener('submit', async event => {
     heading.innerHTML = `search for : ${inputValue}`;
     if (!data.results.length) {
       Notiflix.Notify.info('No games found');
+      prevPageBtn.style.display = 'none';
+      nextPageBtn.style.display = 'none';
       return;
     }
 
