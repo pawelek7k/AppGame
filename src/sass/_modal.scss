@@ -102,6 +102,10 @@
   flex-direction: column;
   width: 50%;
   gap: 10px;
+  @media (max-width: 1365px) {
+    width: 80%;
+    gap: $spacing;
+  }
 }
 
 .stats-modal {
@@ -233,5 +237,21 @@
     &:hover {
       filter: grayscale(1);
     }
+  }
+}
+
+.view-more-screenshots {
+  position: relative;
+  color: white;
+  cursor: pointer;
+  display: none;
+  @media (max-width: 1365px) {
+    display: block;
+  }
+  span {
+    position: relative;
+    font-family: $first-font;
+
+    @include effect-paragraph();
   }
 }

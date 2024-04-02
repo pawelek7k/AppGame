@@ -786,6 +786,12 @@ section {
   width: 50%;
   gap: 10px;
 }
+@media (max-width: 1365px) {
+  .stats-modal {
+    width: 80%;
+    gap: 2rem;
+  }
+}
 
 .stats-modal {
   z-index: 2;
@@ -906,6 +912,36 @@ section {
   filter: grayscale(1);
 }
 
+.view-more-screenshots {
+  position: relative;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 1365px) {
+  .view-more-screenshots {
+    display: block;
+  }
+}
+.view-more-screenshots span {
+  position: relative;
+  font-family: "Trade Winds", system-ui;
+}
+.view-more-screenshots span::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: -4px;
+  background: rgb(255, 0, 0);
+  transition: width 0.5s, left 0.5s;
+  right: 0;
+}
+.view-more-screenshots span:hover::after {
+  width: 100%;
+  left: 0;
+}
+
 .user-modal {
   display: none;
   position: fixed;
@@ -991,7 +1027,7 @@ section {
   height: 2px;
   position: absolute;
   bottom: -4px;
-  background: rgba(8, 71, 67, 0.4862745098);
+  background: rgb(255, 0, 0);
   transition: width 0.5s, left 0.5s;
   right: 0;
 }

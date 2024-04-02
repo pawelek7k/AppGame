@@ -38,21 +38,7 @@
     position: relative;
     span {
       position: relative;
-      &::after {
-        content: '';
-        width: 0;
-        height: 2px;
-        position: absolute;
-        bottom: -4px;
-        background: $death-green;
-        transition: width 0.5s, left 0.5s;
-        right: 0;
-      }
-
-      &:hover::after {
-        width: 100%;
-        left: 0;
-      }
+      @include effect-paragraph();
     }
 
     &:hover {

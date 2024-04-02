@@ -198,6 +198,8 @@ function showModal(game) {
         `
             : ''
         }
+
+        <p class="view-more-screenshots"><span class="effect">see screenshots</span> </p>
       </div>
     </div>
   </div>

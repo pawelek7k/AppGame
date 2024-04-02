@@ -136,3 +136,21 @@
     transform: translateX(-100%);
   }
 }
+
+@mixin effect-paragraph() {
+  &::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: -4px;
+    background: $red;
+    transition: width 0.5s, left 0.5s;
+    right: 0;
+  }
+
+  &:hover::after {
+    width: 100%;
+    left: 0;
+  }
+}
