@@ -157,4 +157,44 @@
 
 @mixin light-theme() {
   background-color: $back-light-theme;
+  color: rgb(0, 0, 0);
+
+  .header {
+    background-color: $light-header;
+    backdrop-filter: blur(0px);
+
+    .buttons-register button {
+      color: black;
+    }
+
+    .logo-header {
+      color: black;
+    }
+  }
+
+  .card-container {
+    background-color: $light-back-elements;
+
+    .second-content-card {
+      background-color: $light-back-elements;
+      color: black;
+    }
+  }
+
+  .side-nav-bar {
+    background-color: $light-header;
+
+    #genre-list li span {
+      color: black;
+    }
+  }
+  .stats-modal {
+    color: $primary-color;
+  }
+
+  .btns-gallery {
+    button {
+      color: black;
+    }
+  }
 }

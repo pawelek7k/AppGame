@@ -298,7 +298,7 @@
   width: 1.4em;
   left: 0.2em;
   bottom: 0.2em;
-  background-color: white;
+  background-color: rgb(0, 255, 213);
   border-radius: inherit;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -1113,6 +1113,36 @@ section {
 }
 .light-theme {
   background-color: #fbfbfb;
+  color: rgb(0, 0, 0);
+}
+.light-theme .header {
+  background-color: rgba(255, 255, 255, 0.795);
+  backdrop-filter: blur(0px);
+}
+.light-theme .header .buttons-register button {
+  color: black;
+}
+.light-theme .header .logo-header {
+  color: black;
+}
+.light-theme .card-container {
+  background-color: rgba(226, 223, 223, 0.993);
+}
+.light-theme .card-container .second-content-card {
+  background-color: rgba(226, 223, 223, 0.993);
+  color: black;
+}
+.light-theme .side-nav-bar {
+  background-color: rgba(255, 255, 255, 0.795);
+}
+.light-theme .side-nav-bar #genre-list li span {
+  color: black;
+}
+.light-theme .stats-modal {
+  color: #c7c7c7;
+}
+.light-theme .btns-gallery button {
+  color: black;
 }
 
 /*# sourceMappingURL=index.css.map */
