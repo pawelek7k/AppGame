@@ -305,7 +305,7 @@
 
 .switch input:checked + .slider {
   box-shadow: 0 0 20px rgb(0, 255, 213);
-  border: 2px solid rgb(0, 255, 213);
+  border: 2px solid #e94be8;
 }
 
 .switch input:checked + .slider:before {
