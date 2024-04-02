@@ -3,19 +3,21 @@ import { API_KEY, list, renderGames } from './render-cards';
 
 const searchForm = document.querySelector('#search-form');
 const searchInput = document.querySelector('#search-input');
+const heading = document.querySelector('.hero-heading');
 let currentPage = 1;
 const perPage = 40;
 
 searchForm.addEventListener('submit', async event => {
   event.preventDefault();
   list.innerHTML = '';
+  heading.innerHTML = '';
   const inputValue = searchInput.value.trim();
 
   if (!inputValue) return;
 
   try {
     const data = await getGames(inputValue, currentPage);
-    console.log(data);
+    heading.innerHTML = `search for : ${inputValue}`;
     if (!data.results.length) {
       Notiflix.Notify.info('No games found');
       return;
@@ -41,7 +43,6 @@ async function getGames(name, page) {
     `https://api.rawg.io/api/games?${searchParams.toString()}`
   );
 
-  console.log(response);
   if (!response.ok) {
     throw new Error(response.statusText);
   }
