@@ -38,6 +38,7 @@
     position: relative;
     span {
       position: relative;
+      text-shadow: $main-text-shadow;
       @include effect-paragraph();
     }
 

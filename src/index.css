@@ -268,6 +268,50 @@
   stroke-dashoffset: -32.42;
 }
 
+.switch {
+  font-size: 10px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  border: 2px solid #414141;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  left: 0.2em;
+  bottom: 0.2em;
+  background-color: white;
+  border-radius: inherit;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.switch input:checked + .slider {
+  box-shadow: 0 0 20px rgb(0, 255, 213);
+  border: 2px solid rgb(0, 255, 213);
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(1.5em);
+}
+
 @keyframes glitch_4011 {
   0% {
     clip-path: var(--move1);
@@ -933,7 +977,7 @@ section {
   height: 2px;
   position: absolute;
   bottom: -4px;
-  background: rgb(255, 0, 0);
+  background: #e94be8;
   transition: width 0.5s, left 0.5s;
   right: 0;
 }
@@ -1020,6 +1064,7 @@ section {
 }
 #genre-list li span {
   position: relative;
+  text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #e94be8;
 }
 #genre-list li span::after {
   content: "";
@@ -1027,7 +1072,7 @@ section {
   height: 2px;
   position: absolute;
   bottom: -4px;
-  background: rgb(255, 0, 0);
+  background: #e94be8;
   transition: width 0.5s, left 0.5s;
   right: 0;
 }
