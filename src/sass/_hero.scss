@@ -120,6 +120,10 @@
   transition: $transition-cards;
   z-index: 888;
   font-size: 10px;
+
+  @media (max-width: 400px) {
+    width: 280px;
+  }
 }
 
 .card-container:hover .second-content-card {
