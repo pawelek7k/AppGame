@@ -275,6 +275,11 @@
   width: 3.5em;
   height: 2em;
 }
+@media (max-width: 470px) {
+  .switch {
+    display: none;
+  }
+}
 
 .switch input {
   opacity: 0;
