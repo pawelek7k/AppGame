@@ -1,6 +1,7 @@
 .btns-and-theme-hamb {
   @include center();
   -webkit-transition: all 0.3s ease-in-out;
+  gap: $spacing;
   transition: all 0.3s ease-in-out;
   @media (max-width: 850px) {
     display: none;
@@ -22,4 +23,10 @@
 .btns-and-theme-hamb.show-menu {
   left: 0;
   display: block;
+  display: flex;
+  gap: 2rem;
+
+  .buttons-register {
+    flex-direction: column;
+  }
 }

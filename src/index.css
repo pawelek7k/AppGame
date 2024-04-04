@@ -67,7 +67,7 @@
 .logo-header {
   font-family: "Trade Winds", system-ui;
   letter-spacing: 2px;
-  font-size: clamp(10px, 3vw, 17px);
+  font-size: clamp(15px, 3vw, 17px);
   text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #e94be8;
 }
 
@@ -171,11 +171,6 @@
   display: flex;
   gap: 2rem;
 }
-@media (max-width: 800px) {
-  .buttons-register {
-    display: none;
-  }
-}
 
 .user-icon {
   width: 2rem;
@@ -191,7 +186,7 @@
 
 .buttons-register button {
   padding: 10px 50px;
-  font-size: clamp(10px, 3vw, 17px);
+  font-size: clamp(15px, 3vw, 17px);
   border: none;
   border-radius: 5px;
   font-family: "Trade Winds", system-ui;
@@ -684,7 +679,7 @@ section {
 }
 .btns-gallery button {
   padding: 10px 50px;
-  font-size: clamp(10px, 3vw, 17px);
+  font-size: clamp(15px, 3vw, 17px);
   border: none;
   border-radius: 5px;
   font-family: "Trade Winds", system-ui;
@@ -1164,12 +1159,16 @@ section {
 .light-theme .line {
   stroke: black;
 }
+.light-theme .wave-group .input {
+  border-bottom: 1px solid black;
+}
 
 .btns-and-theme-hamb {
   align-items: center;
   justify-content: center;
   display: flex;
   -webkit-transition: all 0.3s ease-in-out;
+  gap: 2rem;
   transition: all 0.3s ease-in-out;
 }
 @media (max-width: 850px) {
@@ -1194,6 +1193,11 @@ section {
 .btns-and-theme-hamb.show-menu {
   left: 0;
   display: block;
+  display: flex;
+  gap: 2rem;
+}
+.btns-and-theme-hamb.show-menu .buttons-register {
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=index.css.map */
