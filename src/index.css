@@ -1169,13 +1169,13 @@ section {
   display: flex;
   -webkit-transition: all 0.3s ease-in-out;
   gap: 2rem;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 @media (max-width: 850px) {
   .btns-and-theme-hamb {
     display: none;
     position: fixed;
-    left: -100%;
+    left: 0;
     top: 70px;
     gap: 0;
     flex-direction: column;
@@ -1185,13 +1185,13 @@ section {
     text-align: center;
     transition: 0.3s;
     height: 50vh;
-    padding-top: 2rem;
+    padding: 2rem;
     z-index: 1000;
   }
 }
 
 .btns-and-theme-hamb.show-menu {
-  left: 0;
+  transform: translateY(0);
   display: block;
   display: flex;
   gap: 2rem;
