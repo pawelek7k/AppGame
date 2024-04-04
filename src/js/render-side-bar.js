@@ -1,4 +1,5 @@
 import { fetchGenres, renderGames } from './render-cards';
+import { heading } from './search';
 
 export async function fetchGamesByGenre(genreId) {
   const API_KEY = '4688c8e2a1b74736a6eaf922561496b4';
@@ -29,6 +30,7 @@ export async function generateGenresOptions() {
 
     listItem.addEventListener('click', async () => {
       const genreId = listItem.dataset.value;
+      heading.innerHTML = `${genre.name}`;
       const games = await fetchGamesByGenre(genreId);
       renderGames(games);
     });

@@ -4,7 +4,7 @@ import { API_KEY, list, renderGames } from './render-cards';
 
 const searchForm = document.querySelector('#search-form');
 const searchInput = document.querySelector('#search-input');
-const heading = document.querySelector('.hero-heading');
+export const heading = document.querySelector('.hero-heading');
 let currentPage = 1;
 const perPage = 40;
 
