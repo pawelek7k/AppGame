@@ -197,4 +197,12 @@
       color: black;
     }
   }
+  .btns-and-theme-hamb {
+    @media (max-width: 850px) {
+      background-color: $light-header;
+    }
+  }
+  .line {
+    stroke: black;
+  }
 }
