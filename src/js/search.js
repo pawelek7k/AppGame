@@ -34,6 +34,7 @@ searchForm.addEventListener('submit', async event => {
     console.error(error);
     Notiflix.Notify.failure('Failed to fetch games');
   }
+  searchForm.reset();
 });
 
 async function getGames(name, page) {

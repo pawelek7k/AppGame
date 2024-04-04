@@ -14,7 +14,8 @@
     height: 4rem;
     backdrop-filter: blur(5px);
     background-color: $back-header;
-    border: 1px solid $death-green;
+    border-top: 1px solid $death-green;
+    border-bottom: 1px solid $death-green;
     z-index: 999;
   }
 }

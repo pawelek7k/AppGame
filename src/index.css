@@ -74,6 +74,11 @@
 .logo-header span {
   color: rgb(0, 255, 213);
 }
+@media (max-width: 500px) {
+  .logo-header span {
+    display: none;
+  }
+}
 
 .wave-group .input {
   font-size: clamp(10px, 3vw, 15px);
@@ -1050,7 +1055,8 @@ section {
     height: 4rem;
     backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.89);
-    border: 1px solid rgba(8, 71, 67, 0.4862745098);
+    border-top: 1px solid rgba(8, 71, 67, 0.4862745098);
+    border-bottom: 1px solid rgba(8, 71, 67, 0.4862745098);
     z-index: 999;
   }
 }
@@ -1154,6 +1160,17 @@ section {
 }
 .light-theme .btns-gallery button {
   color: black;
+}
+
+.btns-and-theme-hamb {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+@media (max-width: 850px) {
+  .btns-and-theme-hamb {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

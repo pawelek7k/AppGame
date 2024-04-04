@@ -14,6 +14,9 @@
 
 .logo-header span {
   color: $primary-cyan;
+  @media (max-width: 500px) {
+    display: none;
+  }
 }
 
 .wave-group .input {
