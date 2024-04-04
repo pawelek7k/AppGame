@@ -1180,7 +1180,6 @@ section {
     gap: 0;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.8901960784);
-    backdrop-filter: blur(10px);
     width: 100%;
     text-align: center;
     transition: 0.3s;
