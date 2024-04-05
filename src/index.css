@@ -1004,18 +1004,21 @@ section {
 }
 
 .user-modal-content {
-  background-color: #fefefe;
+  background-color: #0c0c0c;
   margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  padding: 2rem;
+  border: 1px solid rgb(0, 255, 213);
+  position: relative;
+  width: 50%;
 }
 
 .user-modal-close {
   color: #aaa;
   float: right;
   font-size: 28px;
-  font-weight: bold;
+}
+.user-modal-close:focus {
+  color: black;
 }
 
 .user-modal-close:hover,
@@ -1023,6 +1026,12 @@ section {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.user-name {
+  text-align: center;
+  font-family: "Trade Winds", system-ui;
+  font-size: clamp(35px, 3vw, 50px);
 }
 
 .side-nav-bar {
