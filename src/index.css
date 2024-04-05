@@ -1186,6 +1186,7 @@ section {
     height: 50vh;
     padding: 2rem;
     z-index: 1000;
+    border-bottom: 1px solid rgb(0, 255, 213);
   }
 }
 
