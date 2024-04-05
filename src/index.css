@@ -1133,10 +1133,10 @@ section {
   color: black;
 }
 .light-theme .card-container {
-  background-color: rgba(226, 223, 223, 0.993);
+  background-color: white;
 }
 .light-theme .card-container .second-content-card {
-  background-color: rgba(226, 223, 223, 0.993);
+  background-color: white;
   color: black;
 }
 .light-theme .side-nav-bar {
@@ -1176,7 +1176,7 @@ section {
     display: none;
     position: fixed;
     left: 0;
-    top: 70px;
+    top: 159px;
     gap: 0;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.8901960784);
@@ -1186,6 +1186,7 @@ section {
     height: 50vh;
     padding: 2rem;
     z-index: 1000;
+    transform: translateY(-100%);
     border-bottom: 1px solid rgb(0, 255, 213);
   }
 }
