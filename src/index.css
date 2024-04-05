@@ -1171,12 +1171,15 @@ section {
   gap: 2rem;
   transition: transform 0.3s ease-in-out;
 }
+.btns-and-theme-hamb .span-profiles {
+  display: none;
+}
 @media (max-width: 850px) {
   .btns-and-theme-hamb {
     display: none;
     position: fixed;
     left: 0;
-    top: 159px;
+    top: 123px;
     gap: 0;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.8901960784);
@@ -1188,6 +1191,25 @@ section {
     z-index: 1000;
     transform: translateY(-100%);
     border-bottom: 1px solid rgb(0, 255, 213);
+  }
+  .btns-and-theme-hamb .span-profiles {
+    display: block;
+    font-family: "Trade Winds", system-ui;
+    font-size: clamp(15px, 3vw, 17px);
+  }
+  .btns-and-theme-hamb .span-profiles::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: -4px;
+    background: #e94be8;
+    transition: width 0.5s, left 0.5s;
+    right: 0;
+  }
+  .btns-and-theme-hamb .span-profiles:hover::after {
+    width: 100%;
+    left: 0;
   }
 }
 
@@ -1201,6 +1223,10 @@ section {
   .btns-and-theme-hamb.show-menu .buttons-register {
     flex-direction: column;
   }
+}
+
+.profile-cont {
+  position: relative;
 }
 
 /*# sourceMappingURL=index.css.map */

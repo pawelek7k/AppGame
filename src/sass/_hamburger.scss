@@ -3,11 +3,14 @@
   -webkit-transition: all 0.3s ease-in-out;
   gap: $spacing;
   transition: transform 0.3s ease-in-out;
+  .span-profiles {
+    display: none;
+  }
   @media (max-width: 850px) {
     display: none;
     position: fixed;
     left: 0;
-    top: 159px;
+    top: 123px;
     gap: 0;
     flex-direction: column;
     background-color: #000000e3;
@@ -19,6 +22,12 @@
     z-index: 1000;
     transform: translateY(-100%);
     border-bottom: 1px solid $primary-cyan;
+    .span-profiles {
+      display: block;
+      font-family: $first-font;
+      font-size: $primary-font-size;
+      @include effect-paragraph();
+    }
   }
 }
 .btns-and-theme-hamb.show-menu {
@@ -32,4 +41,8 @@
       flex-direction: column;
     }
   }
+}
+
+.profile-cont {
+  position: relative;
 }
