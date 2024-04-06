@@ -819,11 +819,8 @@ section {
 
 .close {
   color: #aaa;
-  position: absolute;
-  top: 70px;
-  right: 35px;
+  float: right;
   font-size: 40px;
-  z-index: 999;
 }
 .close:hover {
   color: #c7c7c7;
@@ -1015,16 +1012,10 @@ section {
 .user-modal-close {
   color: #aaa;
   float: right;
-  font-size: 28px;
+  font-size: 40px;
 }
-.user-modal-close:focus {
-  color: black;
-}
-
-.user-modal-close:hover,
-.user-modal-close:focus {
-  color: black;
-  text-decoration: none;
+.user-modal-close:hover {
+  color: #c7c7c7;
   cursor: pointer;
 }
 

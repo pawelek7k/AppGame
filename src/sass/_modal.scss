@@ -85,16 +85,7 @@
 }
 
 .close {
-  color: #aaa;
-  position: absolute;
-  top: 70px;
-  right: 35px;
-  font-size: 40px;
-  z-index: 999;
-  &:hover {
-    color: $primary-color;
-    cursor: pointer;
-  }
+  @include close-btn();
 }
 
 .stats-modal {
