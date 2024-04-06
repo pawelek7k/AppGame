@@ -1240,6 +1240,10 @@ section {
   z-index: 9999;
 }
 
+.login-container.show-menu {
+  display: block;
+}
+
 .login-content {
   background-color: #0c0c0c;
   margin: 10% auto;
@@ -1247,6 +1251,16 @@ section {
   border: 1px solid rgb(0, 255, 213);
   position: relative;
   width: 50%;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 40px;
+}
+.close-btn:hover {
+  color: #c7c7c7;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=index.css.map */
