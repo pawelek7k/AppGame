@@ -1249,4 +1249,13 @@ section {
   z-index: 9999;
 }
 
+.login-content {
+  background-color: #0c0c0c;
+  margin: 10% auto;
+  padding: 2rem;
+  border: 1px solid rgb(0, 255, 213);
+  position: relative;
+  width: 50%;
+}
+
 /*# sourceMappingURL=index.css.map */

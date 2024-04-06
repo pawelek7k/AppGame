@@ -1,3 +1,7 @@
 .login-container {
   @include modal-styles();
 }
+
+.login-content {
+  @include modal-content();
+}

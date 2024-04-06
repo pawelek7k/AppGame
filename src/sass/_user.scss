@@ -3,12 +3,7 @@
 }
 
 .user-modal-content {
-  background-color: $background-color;
-  margin: 10% auto;
-  padding: 2rem;
-  border: 1px solid $primary-cyan;
-  position: relative;
-  width: 50%;
+  @include modal-content();
 }
 
 .user-modal-close {

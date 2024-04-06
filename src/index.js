@@ -2,6 +2,7 @@
 
 import './js/chroma';
 import './js/hamburger';
+import './js/login';
 import './js/modal-details';
 import './js/pagination';
 import './js/render-cards';

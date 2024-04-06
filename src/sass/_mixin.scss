@@ -210,3 +210,12 @@
     border-bottom: 1px solid black;
   }
 }
+
+@mixin modal-content() {
+  background-color: $background-color;
+  margin: 10% auto;
+  padding: 2rem;
+  border: 1px solid $primary-cyan;
+  position: relative;
+  width: 50%;
+}
