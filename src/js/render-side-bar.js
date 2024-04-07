@@ -1,4 +1,5 @@
-import { fetchGenres, renderGames } from './render-cards';
+import { nextPageBtn, prevPageBtn } from './pagination';
+import { fetchGenres, list, loader, renderGames } from './render-cards';
 import { heading } from './search';
 
 export async function fetchGamesByGenre(genreId) {
@@ -29,10 +30,18 @@ export async function generateGenresOptions() {
     listItem.appendChild(spanItem);
 
     listItem.addEventListener('click', async () => {
+      list.innerHTML = '';
+      prevPageBtn.style.display = 'none';
+      nextPageBtn.style.display = 'none';
+      loader.style.display = 'block';
+
       const genreId = listItem.dataset.value;
       heading.innerHTML = `${genre.name}`;
       const games = await fetchGamesByGenre(genreId);
       renderGames(games);
+      prevPageBtn.style.display = 'block';
+      nextPageBtn.style.display = 'block';
+      loader.style.display = 'none';
     });
   });
 }

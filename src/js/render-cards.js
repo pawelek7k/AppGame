@@ -125,6 +125,8 @@ export async function renderGames(games) {
 
         list.insertAdjacentHTML('beforeend', listItem);
         loader.style.display = 'none';
+        prevPageBtn.style.display = 'block';
+        nextPageBtn.style.display = 'block';
         document
           .querySelector(`[data-id="${id}"] .view-details-btn`)
           .addEventListener('click', async function () {

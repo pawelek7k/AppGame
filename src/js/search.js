@@ -10,6 +10,9 @@ const perPage = 40;
 searchForm.addEventListener('submit', async event => {
   event.preventDefault();
   list.innerHTML = '';
+  prevPageBtn.style.display = 'none';
+  nextPageBtn.style.display = 'none';
+  loader.style.display = 'block';
   heading.innerHTML = '';
   const inputValue = searchInput.value.trim();
 
@@ -31,7 +34,6 @@ searchForm.addEventListener('submit', async event => {
     nextPageBtn.style.display = 'block';
 
     renderGames(data.results);
-    loader.style.display = 'none';
   } catch (error) {
     console.error(error);
     Notiflix.Notify.failure('Failed to fetch games');
