@@ -1,7 +1,10 @@
+const prevPageBtn = document.querySelector('.next-page-button');
+const nextPageBtn = document.querySelector('.prev-page-button');
 export const API_KEY = '8b50ecc01425485f9653061e73d88e87';
 export let page = 1;
 const baseUrl = 'https://api.rawg.io/api/';
 export const list = document.querySelector('.main-gallery');
+export const loader = document.querySelector('.loader');
 
 export async function fetchPopularGames(page) {
   const url = new URL('games', baseUrl);
@@ -43,6 +46,9 @@ export async function fetchGenres() {
     console.error('Error fetching genres:', error);
   }
 }
+
+prevPageBtn.style.display = 'none';
+nextPageBtn.style.display = 'none';
 
 export async function renderGames(games) {
   list.innerHTML = '';
@@ -118,7 +124,7 @@ export async function renderGames(games) {
         `;
 
         list.insertAdjacentHTML('beforeend', listItem);
-
+        loader.style.display = 'none';
         document
           .querySelector(`[data-id="${id}"] .view-details-btn`)
           .addEventListener('click', async function () {

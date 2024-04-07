@@ -5,6 +5,7 @@ body {
   color: $primary-color;
   font-family: $second-font;
   transition: background-color 0.9s ease;
+  overflow-x: hidden;
 }
 
 * {

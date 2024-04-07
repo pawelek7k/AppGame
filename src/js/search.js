@@ -1,7 +1,6 @@
 import Notiflix from 'notiflix';
 import { nextPageBtn, prevPageBtn } from './pagination';
-import { API_KEY, list, renderGames } from './render-cards';
-
+import { API_KEY, list, loader, renderGames } from './render-cards';
 const searchForm = document.querySelector('#search-form');
 const searchInput = document.querySelector('#search-input');
 export const heading = document.querySelector('.hero-heading');
@@ -19,6 +18,8 @@ searchForm.addEventListener('submit', async event => {
   try {
     const data = await getGames(inputValue, currentPage);
     heading.innerHTML = `search for : ${inputValue}`;
+    loader.style.display = 'none';
+
     if (!data.results.length) {
       Notiflix.Notify.info('No games found');
       prevPageBtn.style.display = 'none';
@@ -30,6 +31,7 @@ searchForm.addEventListener('submit', async event => {
     nextPageBtn.style.display = 'block';
 
     renderGames(data.results);
+    loader.style.display = 'none';
   } catch (error) {
     console.error(error);
     Notiflix.Notify.failure('Failed to fetch games');
