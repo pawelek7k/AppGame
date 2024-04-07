@@ -120,6 +120,7 @@
   transition: $transition-cards;
   z-index: 888;
   font-size: 10px;
+  font-weight: 500;
 
   @media (max-width: 400px) {
     width: 280px;

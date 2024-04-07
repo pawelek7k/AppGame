@@ -2,7 +2,7 @@ import { fetchGenres, renderGames } from './render-cards';
 import { heading } from './search';
 
 export async function fetchGamesByGenre(genreId) {
-  const API_KEY = '4688c8e2a1b74736a6eaf922561496b4';
+  const API_KEY = '8b50ecc01425485f9653061e73d88e87';
   const url = new URL(`https://api.rawg.io/api/games`);
   url.searchParams.append('key', API_KEY);
   url.searchParams.append('genres', genreId);

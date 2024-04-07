@@ -639,6 +639,7 @@ section {
   transition: 250ms;
   z-index: 888;
   font-size: 10px;
+  font-weight: 500;
 }
 @media (max-width: 400px) {
   .second-content-card {
