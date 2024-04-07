@@ -1177,6 +1177,9 @@ section {
 .light-theme .cards-home-game-genres {
   border-bottom: 0.5px solid rgba(36, 35, 35, 0.058);
 }
+.light-theme .glitch {
+  color: black;
+}
 
 .btns-and-theme-hamb {
   align-items: center;
