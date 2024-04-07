@@ -1,4 +1,4 @@
-export const API_KEY = '4688c8e2a1b74736a6eaf922561496b4';
+export const API_KEY = '8b50ecc01425485f9653061e73d88e87';
 export let page = 1;
 const baseUrl = 'https://api.rawg.io/api/';
 export const list = document.querySelector('.main-gallery');

@@ -654,8 +654,6 @@ section {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.058);
-  padding: 5px 0px;
 }
 
 .view-details-btn {
@@ -1169,9 +1167,6 @@ section {
 .light-theme .wave-group .input {
   border-bottom: 1px solid black;
 }
-.light-theme .cards-home-game-genres {
-  border-bottom: 0.5px solid rgba(36, 35, 35, 0.058);
-}
 
 .btns-and-theme-hamb {
   align-items: center;
@@ -1274,4 +1269,4 @@ section {
   cursor: pointer;
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.ss.map */

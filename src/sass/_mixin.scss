@@ -209,6 +209,10 @@
   .wave-group .input {
     border-bottom: 1px solid black;
   }
+
+  .cards-home-game-genres {
+    border-bottom: 0.5px solid rgba(36, 35, 35, 0.058);
+  }
 }
 
 @mixin modal-content() {
