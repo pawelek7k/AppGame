@@ -1,5 +1,3 @@
-import prevPageBtn from './pagination';
-
 export const API_KEY = '4688c8e2a1b74736a6eaf922561496b4';
 export let page = 1;
 const baseUrl = 'https://api.rawg.io/api/';
@@ -133,6 +131,7 @@ export async function renderGames(games) {
 
 function showModal(game) {
   const screenshots = game.short_screenshots.slice(0, 6);
+  document.querySelector('body').style.overflow = 'hidden';
   const screenshotsHtml = screenshots
     .map(
       (screenshot, index) =>
@@ -203,6 +202,7 @@ function showModal(game) {
 
 function closeModal() {
   document.querySelector('.modal').style.display = 'none';
+  document.querySelector('body').style.overflow = 'auto';
 }
 
 document.addEventListener('keydown', function (event) {
