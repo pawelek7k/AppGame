@@ -821,6 +821,10 @@ section {
   color: #aaa;
   float: right;
   font-size: 40px;
+  z-index: 999;
+  position: absolute;
+  top: 70;
+  right: 60;
 }
 .close:hover {
   color: #c7c7c7;
@@ -1013,6 +1017,7 @@ section {
   color: #aaa;
   float: right;
   font-size: 40px;
+  z-index: 999;
 }
 .user-modal-close:hover {
   color: #c7c7c7;
@@ -1257,6 +1262,7 @@ section {
   color: #aaa;
   float: right;
   font-size: 40px;
+  z-index: 999;
 }
 .close-btn:hover {
   color: #c7c7c7;
