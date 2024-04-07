@@ -129,7 +129,22 @@ export async function renderGames(games) {
   }
 }
 
-function showModal(game) {
+async function fetchGameDescription(id) {
+  const url = new URL(`games/${id}`, baseUrl);
+  url.searchParams.append('key', API_KEY);
+
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    return data.description;
+  } catch (error) {
+    console.error(`Error fetching game description with id ${id}:`, error);
+    return '';
+  }
+}
+
+async function showModal(game) {
+  const description = await fetchGameDescription(game.id);
   const screenshots = game.short_screenshots.slice(0, 6);
   document.querySelector('body').style.overflow = 'hidden';
   const screenshotsHtml = screenshots
@@ -142,56 +157,59 @@ function showModal(game) {
     .join('');
 
   const modalContent = `
-  <div class="modal-content" style="background-image: url(${
-    game.background_image
-  }); background-repeat: no-repeat; background-size: cover;">
-    <div class="gradient-overlay"></div>
-    <div class="follow-us"><span>Follow us!</span></div>
-    <span class="close">&times;</span>
+    <div class="modal-content" style="background-image: url(${
+      game.background_image
+    }); background-repeat: no-repeat; background-size: cover;">
+      <div class="gradient-overlay"></div>
+      <div class="follow-us"><span>Follow us!</span></div>
+      <span class="close">&times;</span>
 
-    <div class="container-modal-div">
-      <div class="screenshots-modal">
+      <div class="container-modal-div">
+        <div class="screenshots-modal">
 
-        ${screenshotsHtml}
+          ${screenshotsHtml}
 
-      </div>
-      <div class="stats-modal">
-      <h2>${game.name}</h2>
-        <ul class="buttons-modal">
-          <li>
-            <button>
-              Add to <span>Wishlist</span>
-              <span class="stat-modal-btn">${game.added}</span>
-            </button>
-          </li>
-          <li><button>Add to my <span>games</span></button></li>
-        </ul>
-        <div class="stats-modal-styles">
-          <p>Rating: <span>${game.rating}</span></p>
-          <p>Added: <span>${game.added}</span></p>
         </div>
-        ${
-          game.genres.length > 0
-            ? `
-          <p>Genres: <span>${game.genres
-            .map(genre => genre.name)
-            .join(', ')}</span></p>
-        `
-            : ''
-        }
-        ${
-          game.tags.length > 0
-            ? `
-          <p>Tags: <span>${game.tags.map(tag => tag.name).join(', ')}</span></p>
-        `
-            : ''
-        }
+        <div class="stats-modal">
+          <h2>${game.name}</h2>
+          <ul class="buttons-modal">
+            <li>
+              <button>
+                Add to <span>Wishlist</span>
+                <span class="stat-modal-btn">${game.added}</span>
+              </button>
+            </li>
+            <li><button>Add to my <span>games</span></button></li>
+          </ul>
+          <div class="stats-modal-styles">
+            <p>Rating: <span>${game.rating}</span></p>
+            <p>Added: <span>${game.added}</span></p>
+          </div>
+          ${
+            game.genres.length > 0
+              ? `
+            <p>Genres: <span>${game.genres
+              .map(genre => genre.name)
+              .join(', ')}</span></p>
+          `
+              : ''
+          }
+          ${
+            game.tags.length > 0
+              ? `
+            <p>Tags: <span>${game.tags
+              .map(tag => tag.name)
+              .join(', ')}</span></p>
+          `
+              : ''
+          }
+          <p>Description: ${description}</p>
+          <p class="view-more-screenshots"><span class="effect">see screenshots</span> </p>
 
-        <p class="view-more-screenshots"><span class="effect">see screenshots</span> </p>
+        </div>
       </div>
     </div>
-  </div>
-`;
+  `;
 
   document.querySelector('.modal').innerHTML = modalContent;
   document.querySelector('.modal').style.display = 'block';
@@ -200,12 +218,12 @@ function showModal(game) {
   closeModalButton.addEventListener('click', closeModal);
 }
 
-function closeModal() {
+async function closeModal() {
   document.querySelector('.modal').style.display = 'none';
   document.querySelector('body').style.overflow = 'auto';
 }
 
-document.addEventListener('keydown', function (event) {
+document.addEventListener('keydown', e => {
   if (event.key === 'Escape') {
     closeModal();
   }
