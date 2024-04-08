@@ -12,6 +12,6 @@ loginBtn.addEventListener('click', e => {
 
 closeBtn.addEventListener('click', e => {
   e.preventDefault();
-  loginBtn.style.color = '#c7c7c7';
+  loginBtn.style.color = '';
   loginContainer.style.display = 'none';
 });
