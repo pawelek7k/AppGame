@@ -1,0 +1,7 @@
+.singup-container {
+  @include modal-styles();
+}
+
+.singup-content {
+  @include modal-content();
+}
