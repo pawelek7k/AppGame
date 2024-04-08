@@ -71,6 +71,14 @@
     background-position: 0% 50%;
   }
 }
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
 .wave-group {
   position: relative;
 }
@@ -388,6 +396,14 @@
     background-position: 0% 50%;
   }
 }
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
 body {
   background-color: #0c0c0c;
   color: #c7c7c7;
@@ -486,6 +502,14 @@ section {
     background-position: 0% 50%;
   }
 }
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
 @keyframes glitch_4011 {
   0% {
     clip-path: var(--move1);
@@ -549,6 +573,14 @@ section {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
   }
 }
 .custom-shape-divider-top-1710960493 {
@@ -1323,6 +1355,10 @@ section {
   backdrop-filter: blur(5px);
   position: relative;
   width: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 .login-content h2 {
   text-align: center;
@@ -1335,13 +1371,6 @@ section {
   display: flex;
   flex-direction: column;
 }
-.login-content p {
-  text-align: center;
-}
-.login-content .form-container {
-  display: flex;
-  justify-content: center;
-}
 
 .close-btn {
   color: #aaa;
@@ -1352,6 +1381,87 @@ section {
 .close-btn:hover {
   color: #c7c7c7;
   cursor: pointer;
+}
+
+.login-box {
+  width: 80%;
+  padding: 40px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+.login-box form button {
+  padding: 10px 50px;
+  font-size: clamp(15px, 3vw, 17px);
+  border: none;
+  border-radius: 5px;
+  font-family: "Trade Winds", system-ui;
+  letter-spacing: 2px;
+  color: #c7c7c7;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+}
+.login-box form button::after {
+  --move1: inset(50% 50% 50% 50%);
+  --move2: inset(31% 0 40% 0);
+  --move3: inset(39% 0 15% 0);
+  --move4: inset(45% 0 40% 0);
+  --move5: inset(45% 0 6% 0);
+  --move6: inset(14% 0 61% 0);
+  clip-path: var(--move1);
+  content: "register";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+}
+.login-box form button:hover::after {
+  animation: glitch_4011 1s;
+  text-shadow: 10 10px 10px black;
+  animation-timing-function: steps(2, end);
+  text-shadow: -3px -3px 0px #1df2f0, 3px 3px 0px #e94be8;
+  background-color: transparent;
+  border: 3px solid rgb(0, 255, 213);
+}
+.login-box form button:hover {
+  text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #e94be8;
+  background-color: transparent;
+  border: 1px solid rgb(0, 255, 213);
+  box-shadow: 0px 10px 10px -10px rgb(0, 255, 213);
+}
+.login-box .user-box {
+  position: relative;
+}
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #bdb8b8;
+  font-size: 12px;
 }
 
 .loader {

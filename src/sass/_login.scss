@@ -8,7 +8,8 @@
 
 .login-content {
   @include modal-content();
-
+  @include center();
+  flex-direction: column;
   h2 {
     text-align: center;
     font-family: $first-font;
@@ -18,16 +19,55 @@
     @include center();
     flex-direction: column;
   }
-  p {
-    text-align: center;
-  }
-
-  .form-container {
-    display: flex;
-    justify-content: center;
-  }
 }
 
 .close-btn {
   @include close-btn();
+}
+
+.login-box {
+  width: 80%;
+  padding: 40px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+
+  form button {
+    @include button-styles();
+  }
+
+  .user-box {
+    position: relative;
+
+    input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      background: transparent;
+    }
+
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      pointer-events: none;
+      transition: 0.5s;
+    }
+
+    input:focus ~ label,
+    input:valid ~ label {
+      top: -20px;
+      left: 0;
+      color: #bdb8b8;
+      font-size: 12px;
+    }
+  }
 }
