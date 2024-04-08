@@ -1056,10 +1056,15 @@ section {
 }
 
 .user-modal-content {
-  background-color: #0c0c0c;
   margin: 10% auto;
   padding: 2rem;
-  border: 1px solid rgb(0, 255, 213);
+  box-sizing: border-box;
+  border-radius: 1.5rem;
+  background-size: 200% 100%;
+  background: linear-gradient(black, rgba(0, 0, 0, 0.756)) padding-box, linear-gradient(145deg, transparent 35%, rgb(0, 255, 213), #e94be8) border-box;
+  border: 2px solid transparent;
+  animation: gradient 5s ease infinite;
+  backdrop-filter: blur(5px);
   position: relative;
   width: 50%;
 }
@@ -1307,12 +1312,8 @@ section {
 }
 
 .login-content {
-  background-color: #0c0c0c;
   margin: 10% auto;
   padding: 2rem;
-  border: 1px solid rgb(0, 255, 213);
-  position: relative;
-  width: 50%;
   box-sizing: border-box;
   border-radius: 1.5rem;
   background-size: 200% 100%;
@@ -1320,11 +1321,26 @@ section {
   border: 2px solid transparent;
   animation: gradient 5s ease infinite;
   backdrop-filter: blur(5px);
+  position: relative;
+  width: 50%;
 }
 .login-content h2 {
   text-align: center;
   font-family: "Trade Winds", system-ui;
   font-size: clamp(35px, 3vw, 50px);
+}
+.login-content #login-form {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.login-content p {
+  text-align: center;
+}
+.login-content .form-container {
+  display: flex;
+  justify-content: center;
 }
 
 .close-btn {
@@ -1436,10 +1452,15 @@ section {
 }
 
 .singup-content {
-  background-color: #0c0c0c;
   margin: 10% auto;
   padding: 2rem;
-  border: 1px solid rgb(0, 255, 213);
+  box-sizing: border-box;
+  border-radius: 1.5rem;
+  background-size: 200% 100%;
+  background: linear-gradient(black, rgba(0, 0, 0, 0.756)) padding-box, linear-gradient(145deg, transparent 35%, rgb(0, 255, 213), #e94be8) border-box;
+  border: 2px solid transparent;
+  animation: gradient 5s ease infinite;
+  backdrop-filter: blur(5px);
   position: relative;
   width: 50%;
 }
