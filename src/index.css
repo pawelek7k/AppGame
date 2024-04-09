@@ -208,6 +208,7 @@
   font-size: clamp(15px, 3vw, 17px);
   border: none;
   border-radius: 5px;
+  height: 3rem;
   font-family: "Trade Winds", system-ui;
   letter-spacing: 2px;
   color: #c7c7c7;
@@ -765,6 +766,7 @@ section {
   font-size: clamp(15px, 3vw, 17px);
   border: none;
   border-radius: 5px;
+  height: 3rem;
   font-family: "Trade Winds", system-ui;
   letter-spacing: 2px;
   color: #c7c7c7;
@@ -1382,6 +1384,32 @@ section {
   display: flex;
   flex-direction: column;
 }
+.login-content p {
+  color: #c7c7c7;
+  margin-top: 2rem;
+}
+.login-content p span {
+  position: relative;
+  transition: 250ms ease-in-out;
+  cursor: pointer;
+}
+.login-content p span::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: -4px;
+  background: #e94be8;
+  transition: width 0.5s, left 0.5s;
+  right: 0;
+}
+.login-content p span:hover::after {
+  width: 100%;
+  left: 0;
+}
+.login-content p span:hover {
+  color: #e94be8;
+}
 @media (max-width: 1000px) {
   .login-content {
     width: 100%;
@@ -1417,6 +1445,7 @@ section {
   font-size: clamp(15px, 3vw, 17px);
   border: none;
   border-radius: 5px;
+  height: 3rem;
   font-family: "Trade Winds", system-ui;
   letter-spacing: 2px;
   color: #c7c7c7;

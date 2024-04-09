@@ -22,6 +22,20 @@
     @include center();
     flex-direction: column;
   }
+
+  p {
+    color: $primary-color;
+    margin-top: 2rem;
+    span {
+      position: relative;
+      @include effect-paragraph();
+      transition: $transition;
+      cursor: pointer;
+      &:hover {
+        color: $pink;
+      }
+    }
+  }
   @media (max-width: 1000px) {
     width: 100%;
     height: 100vh;
