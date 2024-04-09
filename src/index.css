@@ -1358,6 +1358,7 @@ section {
   align-items: center;
   justify-content: center;
   display: flex;
+  width: 50%;
   flex-direction: column;
 }
 .login-content h2 {
@@ -1370,6 +1371,14 @@ section {
   justify-content: center;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 1000px) {
+  .login-content {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    margin: 0;
+  }
 }
 
 .close-btn {
@@ -1384,7 +1393,7 @@ section {
 }
 
 .login-box {
-  width: 80%;
+  width: 70%;
   padding: 40px;
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
@@ -1446,6 +1455,9 @@ section {
   outline: none;
   background: transparent;
 }
+.login-box .user-box input:focus {
+  border-bottom: 1px solid rgb(0, 255, 213);
+}
 .login-box .user-box label {
   position: absolute;
   top: 0;
@@ -1460,7 +1472,7 @@ section {
 .login-box .user-box input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #bdb8b8;
+  color: rgb(0, 255, 213);
   font-size: 12px;
 }
 
