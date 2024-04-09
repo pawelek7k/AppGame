@@ -902,7 +902,9 @@ section {
 
 .close {
   color: #aaa;
-  float: right;
+  position: absolute;
+  top: 30;
+  right: 30;
   font-size: 40px;
   z-index: 999;
   position: absolute;
@@ -910,7 +912,7 @@ section {
   right: 60;
 }
 .close:hover {
-  color: #c7c7c7;
+  color: rgb(0, 255, 213);
   cursor: pointer;
 }
 
@@ -1103,12 +1105,14 @@ section {
 
 .user-modal-close {
   color: #aaa;
-  float: right;
+  position: absolute;
+  top: 30;
+  right: 30;
   font-size: 40px;
   z-index: 999;
 }
 .user-modal-close:hover {
-  color: #c7c7c7;
+  color: rgb(0, 255, 213);
   cursor: pointer;
 }
 
@@ -1359,6 +1363,7 @@ section {
   justify-content: center;
   display: flex;
   width: 50%;
+  padding: 5rem 0rem;
   flex-direction: column;
 }
 .login-content h2 {
@@ -1383,12 +1388,14 @@ section {
 
 .close-btn {
   color: #aaa;
-  float: right;
+  position: absolute;
+  top: 30;
+  right: 30;
   font-size: 40px;
   z-index: 999;
 }
 .close-btn:hover {
-  color: #c7c7c7;
+  color: rgb(0, 255, 213);
   cursor: pointer;
 }
 

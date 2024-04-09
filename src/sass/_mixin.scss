@@ -237,11 +237,13 @@
 
 @mixin close-btn() {
   color: #aaa;
-  float: right;
+  position: absolute;
+  top: 30;
+  right: 30;
   font-size: 40px;
   z-index: 999;
   &:hover {
-    color: $primary-color;
+    color: $primary-cyan;
     cursor: pointer;
   }
 }
