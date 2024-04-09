@@ -1367,7 +1367,7 @@ section {
   align-items: center;
   justify-content: center;
   display: flex;
-  width: 50%;
+  width: 500px;
   padding: 5rem 0rem;
   flex-direction: column;
 }

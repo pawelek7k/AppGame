@@ -9,7 +9,7 @@
 .login-content {
   @include modal-content();
   @include center();
-  width: 50%;
+  width: 500px;
   padding: 5rem 0rem;
   flex-direction: column;
 
