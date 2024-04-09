@@ -9,10 +9,6 @@
 .login-content {
   @include modal-content();
   @include center();
-  width: 500px;
-  padding: 5rem 0rem;
-  flex-direction: column;
-
   h2 {
     text-align: center;
     font-family: $first-font;

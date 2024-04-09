@@ -10,8 +10,15 @@
   @include close-btn();
 }
 
-.user-name {
-  text-align: center;
-  font-family: $first-font;
-  font-size: $heading-font-size;
+.user-profile {
+  h2 {
+    text-align: center;
+    font-family: $first-font;
+    font-size: $heading-font-size;
+    color: $primary-color;
+  }
+
+  p {
+    color: $primary-color;
+  }
 }
