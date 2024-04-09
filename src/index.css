@@ -907,6 +907,7 @@ section {
   right: 30;
   font-size: 40px;
   z-index: 999;
+  transition: 250ms ease-in-out;
   position: absolute;
   top: 70;
   right: 60;
@@ -1110,6 +1111,7 @@ section {
   right: 30;
   font-size: 40px;
   z-index: 999;
+  transition: 250ms ease-in-out;
 }
 .user-modal-close:hover {
   color: rgb(0, 255, 213);
@@ -1265,6 +1267,9 @@ section {
 .light-theme .glitch {
   color: black;
 }
+.light-theme .login-content h2 {
+  color: #c7c7c7;
+}
 
 .btns-and-theme-hamb {
   align-items: center;
@@ -1393,6 +1398,7 @@ section {
   right: 30;
   font-size: 40px;
   z-index: 999;
+  transition: 250ms ease-in-out;
 }
 .close-btn:hover {
   color: rgb(0, 255, 213);

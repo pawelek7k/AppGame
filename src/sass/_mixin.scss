@@ -217,6 +217,10 @@
   .glitch {
     color: black;
   }
+
+  .login-content h2 {
+    color: $primary-color;
+  }
 }
 
 @mixin modal-content() {
@@ -242,6 +246,7 @@
   right: 30;
   font-size: 40px;
   z-index: 999;
+  transition: $transition;
   &:hover {
     color: $primary-cyan;
     cursor: pointer;
