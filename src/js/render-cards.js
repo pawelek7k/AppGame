@@ -211,7 +211,9 @@ async function showModal(game) {
           `
               : ''
           }
+          <div class="description-content">
           <p>Description: ${description}</p>
+          </div>
           <p class="view-more-screenshots"><span class="effect">see screenshots</span> </p>
 
         </div>

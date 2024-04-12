@@ -197,7 +197,7 @@
   background-color: rgb(0, 255, 213);
   height: 2rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .user-icon {
     display: none;
   }
@@ -851,6 +851,7 @@ section {
   display: flex;
   padding: 2rem;
   max-width: 1800px;
+  overflow: auto;
 }
 @media (max-width: 950px) {
   .container-modal-div {
@@ -1081,6 +1082,16 @@ section {
 .view-more-screenshots span:hover::after {
   width: 100%;
   left: 0;
+}
+
+.description-content {
+  max-height: 350px;
+  overflow-y: auto;
+}
+@media (max-width: 400px) {
+  .description-content {
+    max-height: 250px;
+  }
 }
 
 .user-modal {
