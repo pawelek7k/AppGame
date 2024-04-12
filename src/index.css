@@ -215,6 +215,7 @@
   background-color: transparent;
   position: relative;
   cursor: pointer;
+  text-wrap: nowrap;
 }
 .buttons-register button::after {
   --move1: inset(50% 50% 50% 50%);
@@ -251,7 +252,7 @@
   cursor: pointer;
   display: none;
 }
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .hamburger {
     display: block;
   }
@@ -773,6 +774,7 @@ section {
   background-color: transparent;
   position: relative;
   cursor: pointer;
+  text-wrap: nowrap;
 }
 .btns-gallery button::after {
   --move1: inset(50% 50% 50% 50%);
@@ -1473,6 +1475,7 @@ section {
   background-color: transparent;
   position: relative;
   cursor: pointer;
+  text-wrap: nowrap;
 }
 .login-box form button::after {
   --move1: inset(50% 50% 50% 50%);

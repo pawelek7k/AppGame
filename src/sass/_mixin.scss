@@ -37,6 +37,7 @@
   background-color: transparent;
   position: relative;
   cursor: pointer;
+  text-wrap: nowrap;
 
   &::after {
     --move1: inset(50% 50% 50% 50%);
