@@ -304,6 +304,7 @@
     padding: 1rem;
     z-index: 2;
     cursor: pointer;
+    text-wrap: nowrap;
 
     span {
       letter-spacing: $letter-spacing;

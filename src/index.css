@@ -965,6 +965,7 @@ section {
   padding: 1rem;
   z-index: 2;
   cursor: pointer;
+  text-wrap: nowrap;
 }
 .buttons-modal button span {
   letter-spacing: 2px;
@@ -1120,6 +1121,7 @@ section {
   width: 500px;
   padding: 5rem 0rem;
   flex-direction: column;
+  padding: 0rem;
 }
 @media (max-width: 1000px) {
   .user-modal-content {
@@ -1138,6 +1140,7 @@ section {
   font-size: 40px;
   z-index: 999;
   transition: 250ms ease-in-out;
+  top: 10;
 }
 .user-modal-close:hover {
   color: rgb(0, 255, 213);
@@ -1149,6 +1152,7 @@ section {
   justify-content: center;
   display: flex;
   flex-direction: column;
+  padding: 0 0 2rem 0;
 }
 .user-profile h2 {
   text-align: center;
@@ -1170,6 +1174,7 @@ section {
   padding: 1rem;
   z-index: 2;
   cursor: pointer;
+  text-wrap: nowrap;
 }
 .user-profile button span {
   letter-spacing: 2px;
@@ -1216,8 +1221,20 @@ section {
   color: #c7c7c7;
 }
 .user-profile .background-image {
-  width: 80%;
-  background-color: black;
+  width: 100%;
+  border-radius: 1rem 1rem 0rem 0rem;
+  height: 7rem;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  margin-bottom: 2rem;
+}
+.user-profile .background-image .user-icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  position: absolute;
+  left: 50%;
+  bottom: 20;
+  transform: translate(-50%, 50%);
 }
 
 .side-nav-bar {
