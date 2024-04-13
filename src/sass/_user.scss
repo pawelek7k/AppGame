@@ -11,6 +11,8 @@
 }
 
 .user-profile {
+  @include center();
+  flex-direction: column;
   h2 {
     text-align: center;
     font-family: $first-font;
@@ -18,7 +20,14 @@
     color: $primary-color;
   }
 
+  @include btn-modal();
+
   p {
     color: $primary-color;
+  }
+
+  .background-image {
+    width: 80%;
+    background-color: black;
   }
 }
