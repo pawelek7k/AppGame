@@ -1075,9 +1075,10 @@ section {
   height: 2px;
   position: absolute;
   bottom: -4px;
-  background: #e94be8;
+  background: rgb(0, 255, 213);
   transition: width 0.5s, left 0.5s;
   right: 0;
+  box-shadow: 0px 3px 15px rgb(0, 255, 213);
 }
 .view-more-screenshots span:hover::after {
   width: 100%;
@@ -1207,9 +1208,10 @@ section {
   height: 2px;
   position: absolute;
   bottom: -4px;
-  background: #e94be8;
+  background: rgb(0, 255, 213);
   transition: width 0.5s, left 0.5s;
   right: 0;
+  box-shadow: 0px 3px 15px rgb(0, 255, 213);
 }
 #genre-list li span:hover::after {
   width: 100%;
@@ -1340,9 +1342,10 @@ section {
     height: 2px;
     position: absolute;
     bottom: -4px;
-    background: #e94be8;
+    background: rgb(0, 255, 213);
     transition: width 0.5s, left 0.5s;
     right: 0;
+    box-shadow: 0px 3px 15px rgb(0, 255, 213);
   }
   .btns-and-theme-hamb .span-profiles:hover::after {
     width: 100%;
@@ -1433,16 +1436,17 @@ section {
   height: 2px;
   position: absolute;
   bottom: -4px;
-  background: #e94be8;
+  background: rgb(0, 255, 213);
   transition: width 0.5s, left 0.5s;
   right: 0;
+  box-shadow: 0px 3px 15px rgb(0, 255, 213);
 }
 .login-content p span:hover::after {
   width: 100%;
   left: 0;
 }
 .login-content p span:hover {
-  color: #e94be8;
+  color: rgb(0, 255, 213);
 }
 @media (max-width: 1000px) {
   .login-content {
