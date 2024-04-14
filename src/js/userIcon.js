@@ -1,7 +1,7 @@
 const profilePicInput = document.getElementById('profilePicInput');
 const userIcon = document.getElementById('userIcon');
 const backgroundImg = document.querySelector('.background-image');
-const bgImg = document.querySelector('#backgroundImg');
+const bgImg = document.querySelector('.bg-image');
 let isInputClicked = false;
 
 const openProfilePicInput = () => {
@@ -40,7 +40,7 @@ backgroundImg.addEventListener('change', e => {
   if (file) {
     const imgUrl = URL.createObjectURL(file);
 
-    bgImg.src = imgUrl;
+    bgImg.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url(${imgUrl})`;
   }
 
   isInputClicked = false;
