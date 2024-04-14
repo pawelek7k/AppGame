@@ -1,10 +1,13 @@
+import _ from 'lodash';
 import Notiflix from 'notiflix';
 
 const copyButton = document.getElementById('copyButton');
 
+const debouncedCopyText = _.debounce(copyText, 500);
+
 copyButton.addEventListener('click', () => {
   var textToCopy = 'Some ID';
-  copyText(textToCopy);
+  debouncedCopyText(textToCopy);
 });
 
 function copyText(text) {
