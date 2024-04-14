@@ -1,6 +1,7 @@
 const profilePicInput = document.getElementById('profilePicInput');
 const userIcon = document.getElementById('userIcon');
 const backgroundImg = document.querySelector('.background-image');
+const bgImg = document.querySelector('#backgroundImg');
 let isInputClicked = false;
 
 const openProfilePicInput = () => {
@@ -39,7 +40,7 @@ backgroundImg.addEventListener('change', e => {
   if (file) {
     const imgUrl = URL.createObjectURL(file);
 
-    backgroundImg.style.backgroundImage = `url(${imgUrl})`;
+    bgImg.src = imgUrl;
   }
 
   isInputClicked = false;
