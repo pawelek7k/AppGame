@@ -1294,7 +1294,7 @@ section {
   position: relative;
   margin-bottom: 2rem;
 }
-.user-profile .background-image .user-icon {
+.user-profile .background-image #userIcon {
   width: 4.5rem;
   height: 4.5rem;
   position: absolute;
@@ -1303,7 +1303,7 @@ section {
   transform: translate(-50%, 50%);
 }
 @media (max-width: 850px) {
-  .user-profile .background-image .user-icon {
+  .user-profile .background-image #userIcon {
     display: block;
   }
 }
