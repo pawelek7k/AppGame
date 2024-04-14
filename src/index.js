@@ -1,6 +1,7 @@
 'use script';
 
 import './js/chroma';
+import './js/copy.js';
 import './js/hamburger';
 import './js/login';
 import './js/modal-details';
