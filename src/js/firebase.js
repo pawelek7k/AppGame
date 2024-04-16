@@ -1,14 +1,11 @@
 // import { getAnalytics } from "firebase/analytics";
 global.process = require('process');
 import { initializeApp } from 'firebase/app';
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged,
-} from 'firebase/auth';
-import { Notify } from 'notiflix';
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+
+const emailInput = document.querySelector('#email-singup');
+const signUpBtn = document.querySelector('.sing-up');
+const passwordInput = document.querySelector('#password-singup');
 const firebaseConfig = {
   apiKey: 'AIzaSyBFTleaabEETsFQRavrze5fpw5vtJK-FIY',
   authDomain: 'appgame-7b22b.firebaseapp.com',
@@ -21,3 +18,18 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+
+signUpBtn.addEventListener('click', e => {
+  e.preventDefault();
+  signUpBtn.disabled = true;
+
+  createUserWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
+    .then(userCredential => {
+      const user = userCredential.user;
+      console.log('User registered:', user);
+    })
+    .catch(error => {
+      const errorMessage = error.message;
+      console.error('Registration error:', errorMessage);
+    });
+});
