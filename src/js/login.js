@@ -1,6 +1,6 @@
 const loginContainer = document.querySelector('.login-container');
 const loginBtn = document.querySelector(
-  '.buttons-register button:nth-of-type(1)'
+  '.buttons-register li:nth-of-type(1) button'
 );
 const closeBtn = document.querySelector('.close-btn');
 
