@@ -12,3 +12,4 @@ import './js/search';
 import './js/theme';
 import './js/user-modal';
 import './js/userIcon';
+import './js/firebase';
