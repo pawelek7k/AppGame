@@ -2,10 +2,6 @@
   @include modal-styles();
 }
 
-.login-container.show-menu {
-  display: block;
-}
-
 .login-content {
   @include modal-content();
   @include center();

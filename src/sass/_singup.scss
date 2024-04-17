@@ -6,6 +6,12 @@
   @include modal-content();
   @include center();
 
+  h2 {
+    text-align: center;
+    font-family: $first-font;
+    font-size: $heading-font-size;
+  }
+
   p {
     color: $primary-color;
     margin-top: 2rem;
@@ -20,16 +26,10 @@
     }
   }
 
-  .login-box {
-    width: 70%;
-    padding: 40px;
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    @include inputs-styles();
-
-    form button {
-      @include button-styles();
-    }
+  @media (max-width: 1000px) {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    margin: 0;
   }
 }

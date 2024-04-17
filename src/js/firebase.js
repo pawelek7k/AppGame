@@ -2,7 +2,6 @@
 global.process = require('process');
 import { initializeApp } from 'firebase/app';
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
-import Notiflix from 'notiflix';
 
 const emailInput = document.querySelector('#email-singup');
 const signUpBtn = document.querySelector('.sing-up');
@@ -23,7 +22,7 @@ const auth = getAuth(app);
 const isInputValue = () => {
   if (passwordInput.value.trim() === '' || emailInput.value.trim() === '') {
     signUpBtn.disabled = 'true';
-    Notiflix.Notify.info('Complete the entire form');
+    // Notiflix.Notify.info('Complete the entire form');
   } else {
     signUpBtn.disabled = 'false';
   }
