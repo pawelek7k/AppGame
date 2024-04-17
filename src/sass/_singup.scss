@@ -6,6 +6,20 @@
   @include modal-content();
   @include center();
 
+  p {
+    color: $primary-color;
+    margin-top: 2rem;
+    span {
+      position: relative;
+      @include effect-paragraph();
+      transition: $transition;
+      cursor: pointer;
+      &:hover {
+        color: $primary-cyan;
+      }
+    }
+  }
+
   .login-box {
     width: 70%;
     padding: 40px;
