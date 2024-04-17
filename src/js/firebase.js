@@ -19,6 +19,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+const isInputValue = () => {
+  if (passwordInput.value.trim() === '' || emailInput.value.trim() === '') {
+    signUpBtn.disabled = 'true';
+  } else {
+    signUpBtn.disabled = 'false';
+  }
+};
+
+emailInput.addEventListener('input', isInputValue);
+passwordInput.addEventListener('input', isInputValue);
+
 signUpBtn.addEventListener('click', e => {
   e.preventDefault();
   signUpBtn.disabled = true;
