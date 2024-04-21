@@ -1,13 +1,17 @@
 // import { getAnalytics } from "firebase/analytics";
-global.process = require('process');
 import { initializeApp } from 'firebase/app';
-import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+import Notiflix from 'notiflix';
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
+global.process = require('process');
 
 const emailInput = document.querySelector('#email-singup');
 const signUpBtn = document.querySelector('.sing-up');
 const passwordInput = document.querySelector('#password-singup');
-const usernameLogin = document.querySelector('#username-login');
-const passwordLogin = document.querySelector('#username-password');
+
 const logInBtn = document.querySelector('.log-in');
 const firebaseConfig = {
   apiKey: 'AIzaSyBFTleaabEETsFQRavrze5fpw5vtJK-FIY',
@@ -41,10 +45,27 @@ signUpBtn.addEventListener('click', e => {
   createUserWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
     .then(userCredential => {
       const user = userCredential.user;
-      console.log('User registered:', user);
     })
     .catch(error => {
       const errorMessage = error.message;
-      console.error('Registration error:', errorMessage);
+    });
+});
+
+//login
+
+logInBtn.addEventListener('click', e => {
+  e.preventDefault();
+  signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
+    .then(userCredential => {
+      (user = userCredential.user),
+        document
+          .querySelector('.login-container')
+          .classList.toggle('is-hidden');
+      Notify.success(`Hi, ${user.emailInput.split('@')[0]}, you are sign in!`);
+    })
+    .catch(error => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      Notiflix.Notify.warning(`Wrong email or password!`);
     });
 });
