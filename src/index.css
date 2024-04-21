@@ -1703,7 +1703,7 @@ section {
   border: none;
   border-bottom: 1px solid #fff;
   outline: none;
-  background: transparent;
+  background-color: transparent;
   transition: 250ms ease-in-out;
 }
 .login-box .user-box input:focus {
