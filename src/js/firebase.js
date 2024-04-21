@@ -1,11 +1,11 @@
 // import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from 'firebase/app';
-import Notiflix from 'notiflix';
 import {
   createUserWithEmailAndPassword,
   getAuth,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
+import Notiflix from 'notiflix';
 global.process = require('process');
 
 const emailInput = document.querySelector('#email-singup');
@@ -34,10 +34,18 @@ const isInputValue = () => {
   }
 };
 
+const checkIfUserIsLoggedIn = () => {
+  const user = auth.currentUser;
+  if (user) {
+    console.log('User is already logged in:', user);
+  }
+};
+
 emailInput.addEventListener('input', isInputValue);
 passwordInput.addEventListener('input', isInputValue);
 
 isInputValue();
+checkIfUserIsLoggedIn();
 
 signUpBtn.addEventListener('click', e => {
   e.preventDefault();
@@ -53,19 +61,26 @@ signUpBtn.addEventListener('click', e => {
 
 //login
 
+const loginDelay = 3000;
+
 logInBtn.addEventListener('click', e => {
   e.preventDefault();
   signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
     .then(userCredential => {
-      (user = userCredential.user),
-        document
-          .querySelector('.login-container')
-          .classList.toggle('is-hidden');
-      Notify.success(`Hi, ${user.emailInput.split('@')[0]}, you are sign in!`);
+      const user = userCredential.user;
+      document.querySelector('.login-container').classList.toggle('is-hidden');
+      Notiflix.Notify.success(
+        `Hi, ${user.email.split('@')[0]}, you are signed in!`
+      );
     })
     .catch(error => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      Notiflix.Notify.warning(`Wrong email or password!`);
+      Notiflix.Notify.failure(`Wrong email or password!`);
+
+      setTimeout(() => {
+        emailInput.value = '';
+        passwordInput.value = '';
+      }, loginDelay);
     });
 });
