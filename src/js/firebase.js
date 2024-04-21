@@ -20,7 +20,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 const isInputValue = () => {
-  if (passwordInput.value.trim() === '' || emailInput.value.trim() === '') {
+  if (!passwordInput.value.trim() || !emailInput.value.trim()) {
     signUpBtn.disabled = 'true';
     // Notiflix.Notify.info('Complete the entire form');
   } else {

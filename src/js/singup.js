@@ -2,12 +2,12 @@ const singUpContainer = document.querySelector('.singup-container');
 const singUpBtn = document.querySelector(
   '.buttons-register li:nth-of-type(2) button'
 );
-const closeBtn = document.querySelector('.close-btn');
+const closeBtn = document.querySelector('.singup-container .close-btn');
 
-function closeSingUpContainer() {
+const closeSingUpContainer = () => {
   singUpBtn.style.color = '';
   singUpContainer.style.display = 'none';
-}
+};
 
 singUpBtn.addEventListener('click', e => {
   e.preventDefault();

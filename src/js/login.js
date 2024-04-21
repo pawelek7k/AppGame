@@ -4,7 +4,7 @@ const loginBtn = document.querySelector(
 );
 const closeBtn = document.querySelector('.close-btn');
 
-function closeLoginContainer() {
+export function closeLoginContainer() {
   loginBtn.style.color = '';
   loginContainer.style.display = 'none';
 }
