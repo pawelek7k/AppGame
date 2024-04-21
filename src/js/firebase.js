@@ -6,6 +6,9 @@ import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
 const emailInput = document.querySelector('#email-singup');
 const signUpBtn = document.querySelector('.sing-up');
 const passwordInput = document.querySelector('#password-singup');
+const usernameLogin = document.querySelector('#username-login');
+const passwordLogin = document.querySelector('#username-password');
+const logInBtn = document.querySelector('.log-in');
 const firebaseConfig = {
   apiKey: 'AIzaSyBFTleaabEETsFQRavrze5fpw5vtJK-FIY',
   authDomain: 'appgame-7b22b.firebaseapp.com',
@@ -21,20 +24,20 @@ const auth = getAuth(app);
 
 const isInputValue = () => {
   if (!passwordInput.value.trim() || !emailInput.value.trim()) {
-    signUpBtn.disabled = 'true';
-    // Notiflix.Notify.info('Complete the entire form');
+    signUpBtn.disabled = true;
   } else {
-    signUpBtn.disabled = 'false';
+    signUpBtn.disabled = false;
   }
 };
 
 emailInput.addEventListener('input', isInputValue);
 passwordInput.addEventListener('input', isInputValue);
 
+isInputValue();
+
 signUpBtn.addEventListener('click', e => {
   e.preventDefault();
   signUpBtn.disabled = true;
-
   createUserWithEmailAndPassword(auth, emailInput.value, passwordInput.value)
     .then(userCredential => {
       const user = userCredential.user;

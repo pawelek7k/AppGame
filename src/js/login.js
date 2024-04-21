@@ -3,8 +3,7 @@ const loginBtn = document.querySelector(
   '.buttons-register li:nth-of-type(1) button'
 );
 const closeBtn = document.querySelector('.close-btn');
-
-export function closeLoginContainer() {
+function closeLoginContainer() {
   loginBtn.style.color = '';
   loginContainer.style.display = 'none';
 }
