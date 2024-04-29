@@ -120,11 +120,7 @@
   #userIcon {
     width: 4.5rem;
     height: 4.5rem;
-    // position: absolute;
-    // left: 50%;
-    // top: 20;
-    // z-index: 2;
-    // transform: translate(-50%, 50%);
+
     @media (max-width: 850px) {
       display: block;
     }
