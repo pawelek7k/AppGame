@@ -59,27 +59,3 @@ async function getGames(name, page) {
   }
   return response.json();
 }
-
-// function handlePagination(totalResults) {
-//   list.innerHTML = '';
-//   const totalPages = Math.ceil(totalResults / perPage);
-
-//   const paginationContainer = document.createElement('div');
-//   paginationContainer.classList.add('pagination');
-
-//   for (let i = 1; i <= totalPages; i++) {
-//     const pageButton = document.createElement('button');
-//     pageButton.textContent = i;
-//     pageButton.addEventListener('click', async () => {
-//       currentPage = i;
-//       const inputValue = searchInput.value.trim();
-//       const data = await getGames(inputValue, currentPage);
-//       list.innerHTML = '';
-//       renderGames(data.results);
-//     });
-//     paginationContainer.appendChild(pageButton);
-//   }
-
-//   // Tutaj zmieniamy przypisanie zawartości na outerHTML
-//   list.innerHTML = paginationContainer.outerHTML;
-// }
